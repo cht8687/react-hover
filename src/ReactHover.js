@@ -1,15 +1,11 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 
-export default class ReactAccordion extends Component {
+export default class ReactHover extends Component {
   static propTypes = {
-
-  }
-
-  constructor(props) {
-    
+  	children: React.PropTypes.node
   }
 
   render() {
-    
+    return <div>{this.props.children}</div>
   }
 }

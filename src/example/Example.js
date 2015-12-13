@@ -1,25 +1,17 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { render } from 'react-dom';
 import ReactHover from '..';
 
-
-let styles = {
-  
-};
-
 class App extends Component {
-  static propTypes = {
-
-  };
 
   render() {
-   const { data, options } = this.props;
     return (
-      <ReactHover 
-        data={data} 
-        options={options}
-        styles={styles}
-      />
+      <ReactHover>
+        <div> 
+          <h1> pop up header </h1>
+          <p> pop up content </p>
+        </div>
+      </ReactHover>
     );
   }
 }
