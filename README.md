@@ -2,7 +2,7 @@
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/cht8687/help)
 
 
-![React Accordion](src/example/construction.png)
+![React Hover](src/example/construction.png)
 
 This module is under construction.
 
