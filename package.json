@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/cht8687/react-hover#readme",
   "peerDependencies": {
-    "react": ">=0.14",
+    "react": ">=0.14"
   },
   "devDependencies": {
     "babel": "^5.8.23",
