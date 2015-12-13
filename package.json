@@ -1,0 +1,56 @@
+{
+  "name": "react-hover",
+  "version": "0.0.1",
+  "description": "show anything when mouse hover",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepublish": "parallelshell -w \"npm run build:dist -s\" \"npm run build:example -s\" \"npm run build:bower -s\"",
+    "prebuild": "rimraf dist example build",
+    "build:dist": "babel src --out-dir dist --source-maps --ignore src/example",
+    "build:example": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cht8687/react-hover.git"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "component",
+    "react-motion",
+    "react-listview",
+    "react-accordion",
+    "accordion",
+    "expandable"
+  ],
+  "files": [
+    "dist"
+  ],
+  "author": "Robert Chang <cht8687@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cht8687/react-hover/issues"
+  },
+  "homepage": "https://github.com/cht8687/react-hover#readme",
+  "peerDependencies": {
+    "react": ">=0.14",
+  },
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "babel-core": "^5.8.23",
+    "babel-eslint": "^4.1.1",
+    "babel-loader": "^5.3.2",
+    "eslint": "^1.3.1",
+    "eslint-loader": "^1.0.0",
+    "eslint-plugin-react": "^3.2.3",
+    "html-webpack-plugin": "^1.6.1",
+    "parallelshell": "^2.0.0",
+    "react-hot-loader": "^1.2.9",
+    "rimraf": "^2.4.3",
+    "webpack": "^1.11.0",
+    "webpack-dev-server": "^1.10.1"
+  },
+  "dependencies": {
+    "react-dom": "^0.14.3"
+  }
+}
