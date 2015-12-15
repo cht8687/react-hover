@@ -1,10 +1,10 @@
 const styles = {
-  hoverItem: {
+  trigger: {
     background: '#E0037E',
     width: '200px'
   },
 
-  outerDiv: {
+  hoverComponent: {
     height: '300px',
     overflowY: 'auto',
     outline: '1px solid blue',
