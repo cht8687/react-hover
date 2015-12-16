@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import HoverComponent from './lib/HoverComponent';
+import TriggerComponent from './lib/TriggerComponent';
 
 export default class ReactHover extends Component {
   static propTypes = {
-  	children: React.PropTypes.node,
+    styles: PropTypes.object.isRequired
   }
 
   constructor(props) {
@@ -11,6 +13,12 @@ export default class ReactHover extends Component {
   }
 
   render() {
-    return <div>{this.props.children}</div>
+    const { styles } = this.props;
+    return (
+      <div>
+        <TriggerComponent styles={styles}/>
+        <HoverComponent styles={styles}/>
+      </div>
+    );
   }
 }

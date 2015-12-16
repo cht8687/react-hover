@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import ReactHover from '..';
-import HoverComponent from './HoverComponent';
-import TriggerComponent from './TriggerComponent';
+import * as styles from './css';
+
 
 class App extends Component {
 
@@ -10,10 +10,9 @@ class App extends Component {
 
     return (
       <div>
-        <ReactHover>
-          <TriggerComponent />
-          <HoverComponent />
-        </ReactHover>
+        <ReactHover
+         styles={styles}
+        />
       </div>
     );
   }

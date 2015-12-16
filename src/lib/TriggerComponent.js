@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
-import * as style from './css';
+import React, { Component, PropTypes } from 'react';
 
 export default class TriggerComponent extends Component {
   static propTypes = {
-
+    styles: PropTypes.object.isRequired
   }
 
   constructor(props) {
@@ -13,10 +12,10 @@ export default class TriggerComponent extends Component {
 
   render() {
     const refName = "hover1";
-
+    const { styles } = this.props;
     return (
       <h1 
-        style={style.trigger} 
+        style={styles.trigger} 
         onMouseOver={this.onMouseOver.bind(this, refName)}> 
           hover me 
       </h1>
