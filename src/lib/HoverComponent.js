@@ -2,7 +2,8 @@ import React, { Component, PropTypes } from 'react';
 
 export default class HoverComponent extends Component {
   static propTypes = {
-    styles: PropTypes.object.isRequired
+    styles: PropTypes.object.isRequired,
+    componentHtml: PropTypes.object.isRequired
   }
 
   constructor(props) {
@@ -11,12 +12,13 @@ export default class HoverComponent extends Component {
   }
 
   render() {
-    const { styles } = this.props;
+    const { styles, componentHtml } = this.props;
+
     return (
       <div
-        style={styles.hoverComponent} > 
-        <h1> pop up header </h1>
-        <p> pop up content </p>
+        style={styles.hoverComponent} 
+        dangerouslySetInnerHTML={{ __html: componentHtml.trigger }}
+        > 
       </div>
     );
   }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import ReactHover from '..';
 import * as styles from './css';
+import componentHtml from './componentHtml';
 
 
 class App extends Component {
@@ -12,6 +13,7 @@ class App extends Component {
       <div>
         <ReactHover
          styles={styles}
+         componentHtml={componentHtml}
         />
       </div>
     );

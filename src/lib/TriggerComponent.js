@@ -2,7 +2,8 @@ import React, { Component, PropTypes } from 'react';
 
 export default class TriggerComponent extends Component {
   static propTypes = {
-    styles: PropTypes.object.isRequired
+    styles: PropTypes.object.isRequired,
+    componentHtml: PropTypes.object.isRequired
   }
 
   constructor(props) {
@@ -12,12 +13,13 @@ export default class TriggerComponent extends Component {
 
   render() {
     const refName = "hover1";
-    const { styles } = this.props;
+    const { styles, componentHtml } = this.props;
     return (
       <h1 
         style={styles.trigger} 
-        onMouseOver={this.onMouseOver.bind(this, refName)}> 
-          hover me 
+        onMouseOver={this.onMouseOver.bind(this, refName)}
+        dangerouslySetInnerHTML={{ __html: componentHtml.hoverComponent }}
+        > 
       </h1>
     );
   }

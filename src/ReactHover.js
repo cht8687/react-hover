@@ -4,7 +4,8 @@ import TriggerComponent from './lib/TriggerComponent';
 
 export default class ReactHover extends Component {
   static propTypes = {
-    styles: PropTypes.object.isRequired
+    styles: PropTypes.object.isRequired,
+    componentHtml: PropTypes.object.isRequired
   }
 
   constructor(props) {
@@ -13,11 +14,17 @@ export default class ReactHover extends Component {
   }
 
   render() {
-    const { styles } = this.props;
+    const { styles, componentHtml } = this.props;
     return (
       <div>
-        <TriggerComponent styles={styles}/>
-        <HoverComponent styles={styles}/>
+        <TriggerComponent 
+          styles={styles} 
+          componentHtml={componentHtml}
+        />
+        <HoverComponent 
+          styles={styles} 
+          componentHtml={componentHtml}
+        />
       </div>
     );
   }
