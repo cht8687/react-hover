@@ -12,7 +12,7 @@ $ npm install --save react-hover
 
 ## Demo
 
-[Demo](http://cht8687.github.io/hover/example/)
+[Demo](http://cht8687.github.io/react-hover/example/)
 
 
 ## Usage
@@ -52,7 +52,7 @@ export const basic = {
 `hoverComponent` is for hover object.
 You can modify the css to anything to fit your needs. In other words, the whole styles are flexible.
 
-**Note that you can use AMD instead of ES6 import for exporting this object.
+**Note that you can use other module system instead of ES6 for exporting this object.
 
 #### `componentHtml`: PropTypes.object.isRequired
 
