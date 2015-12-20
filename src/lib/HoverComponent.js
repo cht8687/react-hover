@@ -17,13 +17,8 @@ export default class HoverComponent extends Component {
       <div
         style={styles.hoverComponent} 
         dangerouslySetInnerHTML={{ __html: componentHtml.trigger }}
-
         > 
       </div>
     );
-  }
-
-  triggered() {
-
   }
 }
