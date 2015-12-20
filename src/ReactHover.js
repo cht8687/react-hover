@@ -11,15 +11,20 @@ export default class ReactHover extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      styles: this.props.styles
+    }
   }
 
   render() {
-    const { styles, componentHtml } = this.props;
+    const { componentHtml } = this.props;
+    const { styles } = this.state;
     return (
       <div>
         <TriggerComponent 
           styles={styles} 
           componentHtml={componentHtml}
+          setVisibility={this.setVisibility.bind(this)}
         />
         <HoverComponent 
           styles={styles} 
@@ -27,5 +32,20 @@ export default class ReactHover extends Component {
         />
       </div>
     );
+  }
+
+  setVisibility(flag) {
+    const { styles } = this.state;
+    let currentStyles = styles;
+    let currentHoverComponent = styles.hoverComponent;
+    if(flag) {
+      Object.assign(currentHoverComponent, {display: 'block'});
+    } else {
+      Object.assign(currentHoverComponent, {display: 'none'});
+    }
+    Object.assign(currentStyles, currentHoverComponent);
+    this.setState({
+      styles: currentStyles
+    })
   }
 }

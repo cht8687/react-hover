@@ -9,8 +9,10 @@ const styles = {
     overflowY: 'auto',
     outline: '1px solid blue',
     width: '300px',
-    background: '#E8E27E'
+    background: '#E8E27E',
+    display: 'none'
   }
+  
 };
 
 export default styles;

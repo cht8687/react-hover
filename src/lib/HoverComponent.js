@@ -8,7 +8,6 @@ export default class HoverComponent extends Component {
 
   constructor(props) {
     super(props);
-
   }
 
   render() {
@@ -18,12 +17,13 @@ export default class HoverComponent extends Component {
       <div
         style={styles.hoverComponent} 
         dangerouslySetInnerHTML={{ __html: componentHtml.trigger }}
+
         > 
       </div>
     );
   }
 
   triggered() {
-    console.log("I've been triggered");
+
   }
 }

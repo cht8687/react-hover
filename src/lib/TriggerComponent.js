@@ -3,7 +3,8 @@ import React, { Component, PropTypes } from 'react';
 export default class TriggerComponent extends Component {
   static propTypes = {
     styles: PropTypes.object.isRequired,
-    componentHtml: PropTypes.object.isRequired
+    componentHtml: PropTypes.object.isRequired,
+    setVisibility: PropTypes.func.isRequired
   }
 
   constructor(props) {
@@ -12,12 +13,12 @@ export default class TriggerComponent extends Component {
   }
 
   render() {
-    const refName = "hover1";
     const { styles, componentHtml } = this.props;
     return (
       <h1 
         style={styles.trigger} 
-        onMouseOver={this.onMouseOver.bind(this, refName)}
+        onMouseOver={this.onMouseOver.bind(this)}
+        onMouseOut={this.onMouseOut.bind(this)}
         dangerouslySetInnerHTML={{ __html: componentHtml.hoverComponent }}
         > 
       </h1>
@@ -25,7 +26,13 @@ export default class TriggerComponent extends Component {
   }
 
   onMouseOver() {
-    //const refDom = eval(`this.refs.${ref}`);
     console.log('hover');
+    const { setVisibility } = this.props;
+    setVisibility(true);
+  }
+
+  onMouseOut() {
+    const { setVisibility } = this.props;
+    setVisibility(false);
   }
 }
