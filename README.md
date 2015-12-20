@@ -1,5 +1,7 @@
-# React hover --- hover anything 
+# React hover --- hover anything. ( Tooltip, div components...)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/cht8687/help)
+
+![React hover](src/example/react-hover.gif)
 
 
 ## Installation
@@ -53,6 +55,10 @@ export const basic = {
 You can modify the css to anything to fit your needs. In other words, the whole styles are flexible.
 
 **Note that you can use other module system instead of ES6 for exporting this object.
+
+1.You can turn anything into hover component.
+2.You can adjust CSS to make hover component show in any position.
+
 
 #### `componentHtml`: PropTypes.object.isRequired
 
