@@ -4,6 +4,6 @@ export const basicComponentHtml = {
 };
 
 export const advancedComponentHtml = {
-  trigger: '<h1> Macbook Pro </h1> <img src="example/macbook.jpg" style="width: 200px" /><p> It’s the future of the notebook. </p>',
+  trigger: '<h1> Macbook Pro </h1> <img src="./macbook.jpg" style="width: 200px" /><p> It’s the future of the notebook. </p>',
   hoverComponent: 'macbook'
 };
