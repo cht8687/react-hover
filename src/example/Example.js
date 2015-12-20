@@ -12,13 +12,13 @@ class App extends Component {
     return (
       <div>
 
-        <h3 style={{margin: '0 auto', textAlign: 'center'}}> Basic Demo </h3>
+        <h3 style={{margin: '0 auto', textAlign: 'center'}}> Basic </h3>
         <ReactHover
          styles={styles.basic}
          componentHtml={componentHtml.basicComponentHtml}
         />
 
-        <h3 style={{margin: '0 auto',  marginTop: '100px', textAlign: 'center', }}> Advanced Demo </h3>
+        <h3 style={{margin: '0 auto',  marginTop: '100px', textAlign: 'center', }}> You can include anything, e.g. image </h3>
         <ReactHover
          styles={styles.advanced}
          componentHtml={componentHtml.advancedComponentHtml}
