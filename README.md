@@ -70,7 +70,7 @@ export const componentHtml = {
 ## Development
 
 ```
-$ git clone git@github.com:cht8687/react-listview-sticky-header.git
+$ git clone git@github.com:cht8687/react-hover.git
 $ cd react-listview-sticky-header
 $ npm install
 $ webpack-dev-server
