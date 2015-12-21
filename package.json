@@ -1,6 +1,6 @@
 {
   "name": "react-hover",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "show anything when mouse hover",
   "main": "dist/index.js",
   "scripts": {
@@ -17,11 +17,9 @@
     "react",
     "react-component",
     "component",
-    "react-motion",
-    "react-listview",
-    "react-accordion",
-    "accordion",
-    "expandable"
+    "react-tooltip",
+    "tooltip",
+    "hover"
   ],
   "files": [
     "dist"
