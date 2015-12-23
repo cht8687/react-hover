@@ -31,7 +31,7 @@ $ npm install --save react-hover
 #### `styles`: PropTypes.object.isRequired
 
 ```js
-export const basic = {
+export const styles = {
   trigger: {
     background: '#E0037E',
     width: '200px',
@@ -64,14 +64,13 @@ You can modify the css to anything to fit your needs. In other words, the whole 
 
 ```js
 export const componentHtml = {
-  trigger: '<h1> pop up header </h1> <p> pop up content </p>',
-  hoverComponent: 'hover me'
+  hoverComponent: '<h1> pop up header </h1> <p> pop up content </p>',
+  trigger: 'hover me'
 };
 
 ```
 `componentHtml` contains the html code which you'd like to display.
-`trigger` object can be showed once a `mouseOver` event fires on `hoverComponent`.
-
+`trigger` object can receive `mouseOver` event and once triggered, the `hoverComponent` will show up.
 
 ## Development
 
