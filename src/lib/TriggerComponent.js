@@ -19,14 +19,13 @@ export default class TriggerComponent extends Component {
         style={styles.trigger} 
         onMouseOver={this.onMouseOver.bind(this)}
         onMouseOut={this.onMouseOut.bind(this)}
-        dangerouslySetInnerHTML={{ __html: componentHtml.hoverComponent }}
+        dangerouslySetInnerHTML={{ __html: componentHtml.trigger }}
         > 
       </h1>
     );
   }
 
   onMouseOver() {
-    console.log('hover');
     const { setVisibility } = this.props;
     setVisibility(true);
   }
