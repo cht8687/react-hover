@@ -16,6 +16,10 @@ $ npm install --save react-hover
 
 [Demo](http://cht8687.github.io/react-hover/example/)
 
+## Example code
+
+[Code Example](https://github.com/cht8687/react-hover/blob/master/src/example/Example.js)
+
 
 ## Usage
 
@@ -71,6 +75,24 @@ export const componentHtml = {
 ```
 `componentHtml` contains the html code which you'd like to display.
 `trigger` object can receive `mouseOver` event and once triggered, the `hoverComponent` will show up.
+
+#### `options`: PropTypes.object.isRequired
+
+Set the options.
+
+```js
+
+const options = {
+  followCursor:true,
+  shiftX: 20,
+  shiftY: 0
+}
+
+```
+`followCursor`: define if hover object follow mouse cursor
+`shiftX`: left-right shift the hover object to the mouse cursor
+`shiftY`: up-down shift the hover object to the mouse cursor
+
 
 ## Development
 

@@ -4,7 +4,8 @@ export default class TriggerComponent extends Component {
   static propTypes = {
     styles: PropTypes.object.isRequired,
     componentHtml: PropTypes.object.isRequired,
-    setVisibility: PropTypes.func.isRequired
+    setVisibility: PropTypes.func.isRequired,
+    getCursorPos: PropTypes.func.isRequired
   }
 
   constructor(props) {
@@ -19,6 +20,7 @@ export default class TriggerComponent extends Component {
         style={styles.trigger} 
         onMouseOver={this.onMouseOver.bind(this)}
         onMouseOut={this.onMouseOut.bind(this)}
+        onMouseMove={this.onMouseMove.bind(this)}
         dangerouslySetInnerHTML={{ __html: componentHtml.trigger }}
         > 
       </h1>
@@ -34,4 +36,10 @@ export default class TriggerComponent extends Component {
     const { setVisibility } = this.props;
     setVisibility(false);
   }
+
+  onMouseMove(e){
+    const { getCursorPos } = this.props;
+    getCursorPos(e);
+  }
+
 }

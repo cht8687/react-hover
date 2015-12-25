@@ -1,6 +1,6 @@
 {
   "name": "react-hover",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "show anything when mouse hover",
   "main": "dist/index.js",
   "scripts": {

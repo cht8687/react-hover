@@ -5,7 +5,8 @@ import TriggerComponent from './lib/TriggerComponent';
 export default class ReactHover extends Component {
   static propTypes = {
     styles: PropTypes.object.isRequired,
-    componentHtml: PropTypes.object.isRequired
+    componentHtml: PropTypes.object.isRequired,
+    options: PropTypes.object.isRequired
   }
 
   constructor(props) {
@@ -25,6 +26,7 @@ export default class ReactHover extends Component {
           styles={styles} 
           componentHtml={componentHtml}
           setVisibility={this.setVisibility.bind(this)}
+          getCursorPos={this.getCursorPos.bind(this)}
         />
         <HoverComponent 
           styles={styles} 
@@ -44,6 +46,27 @@ export default class ReactHover extends Component {
       Object.assign(currentHoverComponent, {display: 'none'});
     }
     Object.assign(currentStyles, currentHoverComponent);
+    this.setState({
+      styles: currentStyles
+    })
+  }
+
+  getCursorPos(e) {
+    const cursorX = e.pageX;
+    const cursorY = e.pageY;
+    
+    const { options: { followCursor, shiftX, shiftY }} = this.props;
+    const { styles } = this.state;
+    let currentStyles = styles;
+
+    if(!followCursor) {
+      return;
+    }
+
+    let currentHoverComponent = styles.hoverComponent;
+    Object.assign(currentHoverComponent, {top: cursorY + shiftY, left: cursorX + shiftX});
+    Object.assign(currentStyles, currentHoverComponent);
+
     this.setState({
       styles: currentStyles
     })
