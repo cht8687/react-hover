@@ -7,7 +7,12 @@
     "prepublish": "parallelshell -w \"npm run build:dist -s\" \"npm run build:example -s\" \"npm run build:bower -s\"",
     "prebuild": "rimraf dist example build",
     "build:dist": "babel src --out-dir dist --source-maps --ignore src/example",
-    "build:example": "webpack --config webpack.config.js"
+    "build:example": "webpack --config webpack.config.js",
+    "postbuild": "npm run test -s",
+    "test": "babel-node test/index.js | tnyan",
+    "coverage": "babel-node node_modules/isparta/bin/isparta cover test/index.js",
+    "coveralls": "npm run coverage -s && coveralls < coverage/lcov.info",
+    "postcoveralls": "rimraf ./coverage"
   },
   "repository": {
     "type": "git",
@@ -48,12 +53,15 @@
     "eslint-loader": "^1.0.0",
     "eslint-plugin-react": "^3.2.3",
     "html-webpack-plugin": "^1.6.1",
+    "isparta": "^4.0.0",
     "parallelshell": "^2.0.0",
+    "react": "^0.14",
+    "react-dom": "^0.14.0",
     "react-hot-loader": "^1.2.9",
     "rimraf": "^2.4.3",
+    "tap-nyan": "0.0.2",
+    "tape": "^4.4.0",
     "webpack": "^1.11.0",
-    "webpack-dev-server": "^1.10.1",
-    "react": "^0.14",
-    "react-dom": "^0.14.0"
+    "webpack-dev-server": "^1.10.1"
   }
 }

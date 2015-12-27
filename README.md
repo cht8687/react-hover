@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://www.npmjs.com/package/react-hover">
-    <img src="https://img.shields.io/npm/v/react-hover?style=flat-square"
+    <img src="https://img.shields.io/npm/v/react-hover.svg?style=flat-square"
          alt="NPM Version">
   </a>
 
