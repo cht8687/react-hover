@@ -136,7 +136,7 @@ const options = {
 
 ```
 $ git clone git@github.com:cht8687/react-hover.git
-$ cd react-listview-sticky-header
+$ cd react-hover
 $ npm install
 $ webpack-dev-server
 ```
