@@ -1,4 +1,4 @@
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/cht8687/help)
+[![Join the chat at https://gitter.im/cht8687/react-hover](https://badges.gitter.im/cht8687/react-hover.svg)](https://gitter.im/cht8687/react-hover?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 <big><h1 align="center">React hover --- Turn anything to hover component</h1></big>
 
@@ -42,8 +42,6 @@
 
 
 ## Installation
-
-[![Join the chat at https://gitter.im/cht8687/react-hover](https://badges.gitter.im/cht8687/react-hover.svg)](https://gitter.im/cht8687/react-hover?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ### npm
 
