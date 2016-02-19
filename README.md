@@ -3,6 +3,11 @@
 <big><h1 align="center">React hover --- Turn anything to hover component</h1></big>
 
 <p align="center">
+  <a href="https://circleci.com/gh/cht8687/react-hover">
+    <img src="https://circleci.com/gh/cht8687/react-hover.svg?style=shield"
+         alt="Circle CI">
+  </a>
+
   <a href="https://www.npmjs.com/package/react-hover">
     <img src="https://img.shields.io/npm/v/react-hover.svg?style=flat-square"
          alt="NPM Version">
