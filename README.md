@@ -1,6 +1,6 @@
 [![Join the chat at https://gitter.im/cht8687/react-hover](https://badges.gitter.im/cht8687/react-hover.svg)](https://gitter.im/cht8687/react-hover?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-<big><h1 align="center">React hover --- Turn anything to hover component</h1></big>
+<big><h1 align="center">React Hover --- Turn anything to a 'hoverable' object</h1></big>
 
 <p align="center">
   <a href="https://circleci.com/gh/cht8687/react-hover">
@@ -103,8 +103,8 @@ You can modify the css to anything to fit your needs. In other words, the whole 
 
 **Note that you can use other module system instead of ES6 for exporting this object.
 
-1.You can turn anything into hover component.
-2.You can adjust CSS to make hover component show in any position.
+* You can turn anything into hover component.
+* You can adjust CSS to make hover component show in any position.
 
 
 #### `componentHtml`: PropTypes.object.isRequired
