@@ -1,7 +1,7 @@
 {
   "name": "react-hover",
-  "version": "0.4.2",
-  "description": "show anything when mouse hover",
+  "version": "0.5.0",
+  "description": "A handy hover tool for React",
   "main": "dist/index.js",
   "scripts": {
     "prepublish": "parallelshell -w \"npm run build:dist -s\" \"npm run build:example -s\" \"npm run build:bower -s\"",

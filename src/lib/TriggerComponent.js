@@ -21,6 +21,8 @@ export default class TriggerComponent extends Component {
         onMouseOver={this.onMouseOver.bind(this)}
         onMouseOut={this.onMouseOut.bind(this)}
         onMouseMove={this.onMouseMove.bind(this)}
+        onTouchStart={this.onTouchStart.bind(this)}
+        onTouchEnd={this.onTouchEnd.bind(this)}
         dangerouslySetInnerHTML={{ __html: componentHtml.trigger }}
         > 
       </h1>
@@ -42,4 +44,13 @@ export default class TriggerComponent extends Component {
     getCursorPos(e);
   }
 
+  onTouchStart() {
+    const { setVisibility } = this.props;
+    setVisibility(true);
+  }
+
+  onTouchEnd() {
+    const { setVisibility } = this.props;
+    setVisibility(false);
+  }
 }
