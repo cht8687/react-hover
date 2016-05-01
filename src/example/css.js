@@ -15,7 +15,7 @@ export const basic = {
     position: 'absolute',
     margin: '-20px 0 0 717px'
   }
-};
+}
 
 export const advanced = {
   trigger: {
@@ -36,9 +36,9 @@ export const advanced = {
   },
 
   img: {
-      width: '200px'
+    width: '200px'
   }
-};
+}
 
 export const cursor = {
   trigger: {
@@ -56,4 +56,4 @@ export const cursor = {
     display: 'none',
     position: 'absolute'
   }
-};
+}
