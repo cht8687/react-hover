@@ -25,7 +25,7 @@
         //"react/display-name": 0, // Prevent missing displayName in a React component definition
         "react/jsx-boolean-value": [2, "always"], // Enforce boolean attributes notation in JSX
         "react/jsx-no-undef": 2, // Disallow undeclared variables in JSX
-        "react/jsx-quotes": [2, "double", "avoid-escape"], // Enforce quote style for JSX attributes
+        "react/jsx-quotes": 0,
         "react/jsx-sort-prop-types": 0, // Enforce propTypes declarations alphabetical sorting
         "react/jsx-sort-props": 0, // Enforce props alphabetical sorting
         "react/jsx-uses-react": 2, // Prevent React to be incorrectly marked as unused
