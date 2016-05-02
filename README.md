@@ -37,11 +37,6 @@
          alt="License">
   </a>
 
-  <a href="https://github.com/cht8687/react-hover/blob/master/LICENSE">
-    <img src="https://img.shields.io/npm/l/react-hover.svg?style=flat-square"
-         alt="License">
-  </a>
-
   <a href="http://standardjs.com/">
     <img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg"
          alt="License">
