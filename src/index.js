@@ -1,3 +1,2 @@
-import ReactHover from './ReactHover';
-export default ReactHover;
-
+import ReactHover from './ReactHover'
+export default ReactHover

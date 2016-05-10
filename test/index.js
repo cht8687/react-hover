@@ -2,6 +2,7 @@ import React from 'react'
 import test from 'tape'
 import ReactHover from '../src/ReactHover'
 import TriggerComponent from '../src/lib/TriggerComponent'
+import HoverComponent from '../src/lib/HoverComponent'
 import * as styles from '../src/example/css'
 import * as componentHtml from '../src/example/componentHtml'
 import { shallow, mount } from 'enzyme'
@@ -16,6 +17,16 @@ test('----- React Component Tests: ReactHover -----', t => {
   const wrapperShallow = shallow( <ReactHover styles={styles.basic} componentHtml={componentHtml.basicComponentHtml} options={optionsCursorFalse} />)
   t.equal(1, wrapperShallow.find('TriggerComponent').length)
   t.equal(1, wrapperShallow.find('HoverComponent').length)
+  t.end()
+})
+
+test('----- React Component Tests: TriggerComponent -----', t => {
+  t.ok(TriggerComponent instanceof Function, 'should be function')
+  t.end()
+})
+
+test('----- React Component Tests: HoverComponent -----', t => {
+  t.ok(HoverComponent instanceof Function, 'should be function')
   t.end()
 })
 
