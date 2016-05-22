@@ -21,28 +21,66 @@ test('----- React Component Tests: ReactHover -----', t => {
 })
 
 test('----- React Component Tests: TriggerComponent -----', t => {
+  t.plan(2)
   t.ok(TriggerComponent instanceof Function, 'should be function')
+  const styles = {
+    trigger: {
+      background: '#E0037E',
+      width: '200px',
+      margin: '0 auto'
+    },
+    hoverComponent: {
+      height: '200px',
+      overflowY: 'auto',
+      outline: '1px solid blue',
+      width: '300px',
+      background: '#E8E27E',
+      display: 'none',
+      position: 'absolute',
+      margin: '-20px 0 0 717px'
+    }
+  }
+
+  const componentHtml = {
+    hoverComponent: '<h1> pop up header </h1> <p> pop up content </p>',
+    trigger: 'hover me'
+  }
+
+  function func() {};
+  const wrapper = shallow(<TriggerComponent styles={styles} componentHtml={componentHtml}  setVisibility={func} getCursorPos={func}/>)
+  t.equal(true, wrapper.containsMatchingElement(<h1></h1>))
+
   t.end()
 })
 
 test('----- React Component Tests: HoverComponent -----', t => {
+  t.plan(2)
   t.ok(HoverComponent instanceof Function, 'should be function')
+  const styles = {
+    trigger: {
+      background: '#E0037E',
+      width: '200px',
+      margin: '0 auto'
+    },
+    hoverComponent: {
+      height: '200px',
+      overflowY: 'auto',
+      outline: '1px solid blue',
+      width: '300px',
+      background: '#E8E27E',
+      display: 'none',
+      position: 'absolute',
+      margin: '-20px 0 0 717px'
+    }
+  }
+
+  const componentHtml = {
+    hoverComponent: '<h1> pop up header </h1> <p> pop up content </p>',
+    trigger: 'hover me'
+  }
+
+  const wrapper = shallow(<HoverComponent styles={styles} componentHtml={componentHtml} />)
+  t.equal(true, wrapper.containsMatchingElement(<div></div>))
   t.end()
 })
 
-// to do: fix below mouse events
-// test('----- React Component Tests: mouse events -----', t => {
-//   t.plan(2)
-//   t.ok(TriggerComponent instanceof Function, 'should be function')
-//   const onMouseOver = sinon.spy()
-//   const optionsCursorFalse = {
-//    followCursor: false
-//   }
-//   const wrapperShallow = shallow( <TriggerComponent />)
-//   const triggerComponent = wrapperShallow.find('h1')
-//   triggerComponent.simulate('onMouseOver')
-//   const actual = onMouseOver.calledOnce
-//   const expected = true
-//   t.equal(actual, expected, 'trigger mouseover once')
-//   t.end()
-// })
