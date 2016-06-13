@@ -1,6 +1,6 @@
 {
   "name": "react-hover",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "A handy hover tool for React",
   "main": "dist/index.js",
   "scripts": {
@@ -38,7 +38,8 @@
   },
   "homepage": "https://github.com/cht8687/react-hover#readme",
   "peerDependencies": {
-    "react": ">=0.14"
+    "react": "^0.14.7 || ^15.0.0",
+    "react-dom": "^0.14.7 || ^15.0.0"  
   },
   "standard": {
     "parser": "babel-eslint"
