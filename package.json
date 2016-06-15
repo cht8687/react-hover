@@ -1,6 +1,6 @@
 {
   "name": "react-hover",
-  "version": "0.5.2",
+  "version": "0.5.4",
   "description": "A handy hover tool for React",
   "main": "dist/index.js",
   "scripts": {
@@ -37,10 +37,6 @@
     "url": "https://github.com/cht8687/react-hover/issues"
   },
   "homepage": "https://github.com/cht8687/react-hover#readme",
-  "peerDependencies": {
-    "react": "^0.14.7 || ^15.0.0",
-    "react-dom": "^0.14.7 || ^15.0.0"  
-  },
   "standard": {
     "parser": "babel-eslint"
   },
@@ -65,9 +61,9 @@
     "html-webpack-plugin": "^2.16.0",
     "isparta": "^4.0.0",
     "parallelshell": "^2.0.0",
-    "react": "^15.0",
+    "react": ">=15.0.1",
     "react-addons-test-utils": "^15.0.2",
-    "react-dom": "^15.0.2",
+    "react-dom": ">=15.0.1",
     "react-hot-loader": "^1.2.9",
     "rimraf": "^2.4.3",
     "sinon": "^1.17.3",
