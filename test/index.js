@@ -48,7 +48,7 @@ test('----- React Component Tests: TriggerComponent -----', t => {
 
   function func() {};
   const wrapper = shallow(<TriggerComponent styles={styles} componentHtml={componentHtml}  setVisibility={func} getCursorPos={func}/>)
-  t.equal(true, wrapper.containsMatchingElement(<h1></h1>))
+  t.equal(true, wrapper.containsMatchingElement(<div></div>))
 
   t.end()
 })
