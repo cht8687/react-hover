@@ -1,5 +1,5 @@
 export const basicComponentHtml = {
-  hoverComponent: '<h1> pop up header </h1> <p> pop up content </p>',
+  hoverComponent: "<h1> pop up header </h1> <p> pop up content </p>",
   trigger: 'hover me'
 }
 
