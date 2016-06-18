@@ -11,7 +11,7 @@ export default class TriggerComponent extends Component {
   render () {
     const { styles, componentHtml } = this.props
     return (
-      <h1
+      <div
         style={styles.trigger}
         onMouseOver={this.onMouseOver.bind(this)}
         onMouseOut={this.onMouseOut.bind(this)}
@@ -20,7 +20,7 @@ export default class TriggerComponent extends Component {
         onTouchEnd={this.onTouchEnd.bind(this)}
         dangerouslySetInnerHTML={{ __html: componentHtml.trigger }}
         >
-      </h1>
+      </div>
     )
   }
 

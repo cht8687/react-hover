@@ -1,7 +1,7 @@
 export const basic = {
   trigger: {
     background: '#E0037E',
-    width: '200px',
+    width: '80px',
     margin: '0 auto'
   },
 
@@ -13,14 +13,14 @@ export const basic = {
     background: '#E8E27E',
     display: 'none',
     position: 'absolute',
-    margin: '-20px 0 0 717px'
+    margin: '-20px 0 0 820px'
   }
 }
 
 export const advanced = {
   trigger: {
     background: '#E0037E',
-    width: '200px',
+    width: '80px',
     margin: '0 auto'
   },
 
@@ -43,7 +43,7 @@ export const advanced = {
 export const cursor = {
   trigger: {
     background: '#E0037E',
-    width: '200px',
+    width: '80px',
     margin: '0 auto'
   },
 
