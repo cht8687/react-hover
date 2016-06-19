@@ -9,7 +9,7 @@ const optionsCursorFalse = {
 }
 
 const optionsCursorTrue = {
-  followCursor: true
+  followCursor: false
 }
 
 const optionsCursorTrueWithMargin = {
