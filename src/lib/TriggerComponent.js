@@ -12,7 +12,7 @@ export default class TriggerComponent extends Component {
     const { styles, componentHtml } = this.props
     return (
       <div
-        style={styles.trigger}
+        style={styles}
         onMouseOver={this.onMouseOver.bind(this)}
         onMouseOut={this.onMouseOut.bind(this)}
         onMouseMove={this.onMouseMove.bind(this)}

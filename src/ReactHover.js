@@ -13,23 +13,24 @@ export default class ReactHover extends Component {
     super(props)
 
     this.state = {
-      styles: this.props.styles
+      triggerComponentStyle: this.props.styles.trigger,
+      hoverComponentStyle: this.props.styles.hoverComponent
     }
   }
 
   render () {
     const { componentHtml } = this.props
-    const { styles } = this.state
+    const { triggerComponentStyle, hoverComponentStyle } = this.state
     return (
       <div>
         <TriggerComponent
-          styles={styles}
+          styles={triggerComponentStyle}
           componentHtml={componentHtml}
           setVisibility={this.setVisibility.bind(this)}
           getCursorPos={this.getCursorPos.bind(this)}
         />
         <HoverComponent
-          styles={styles}
+          styles={hoverComponentStyle}
           componentHtml={componentHtml}
         />
       </div>
@@ -37,34 +38,36 @@ export default class ReactHover extends Component {
   }
 
   setVisibility (flag) {
-    const { styles } = this.state
-    let currentStyles = styles
-    let currentHoverComponent = styles.hoverComponent
+    let { hoverComponentStyle } = this.state
+    let updatedStyles = null
     if (flag) {
-      Object.assign(currentHoverComponent, {display: 'block'})
+      updatedStyles = Object.assign({}, hoverComponentStyle, {display: 'block'})
     } else {
-      Object.assign(currentHoverComponent, {display: 'none'})
+      updatedStyles = Object.assign({}, hoverComponentStyle, {display: 'none'})
     }
-    Object.assign(currentStyles, currentHoverComponent)
     this.setState({
-      styles: currentStyles
+      hoverComponentStyle: updatedStyles
     })
   }
 
   getCursorPos (e) {
     const cursorX = e.pageX
     const cursorY = e.pageY
-    const {options: { followCursor, shiftX, shiftY }} = this.props
-    const { styles } = this.state
-    let currentStyles = styles
+    let {options: { followCursor, shiftX, shiftY }} = this.props
+    const { hoverComponentStyle } = this.state
+    let updatedStyles = null
     if (!followCursor) {
       return
     }
-    let currentHoverComponent = styles.hoverComponent
-    Object.assign(currentHoverComponent, {top: cursorY + shiftY, left: cursorX + shiftX})
-    Object.assign(currentStyles, currentHoverComponent)
+    if (shiftX == NaN) {
+      shiftX = 0
+    }
+    if (shiftY == NaN) {
+      shiftY = 0
+    }
+    updatedStyles = Object.assign({}, hoverComponentStyle, {top: cursorY + shiftY, left: cursorX + shiftX})
     this.setState({
-      styles: currentStyles
+      hoverComponentStyle: updatedStyles
     })
   }
 }
