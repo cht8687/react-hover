@@ -1,6 +1,6 @@
 {
   "name": "react-hover",
-  "version": "0.5.5",
+  "version": "0.6.0",
   "description": "A handy hover tool for React",
   "main": "dist/index.js",
   "scripts": {
@@ -26,7 +26,8 @@
     "component",
     "react-tooltip",
     "tooltip",
-    "hover"
+    "hover",
+    "react hover"
   ],
   "files": [
     "dist"
