@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "lint": "standard src/**/*.js | snazzy",
+    "dev": "webpack-dev-server -d --history-api-fallback --hot --inline --progress --colors --port 8080",
     "pretest": "npm run lint",
     "prepublish": "parallelshell -w \"npm run build:dist -s\" \"npm run build:example -s\" \"npm run build:bower -s\"",
     "prebuild": "rimraf dist example build",
