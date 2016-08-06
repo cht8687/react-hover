@@ -26,6 +26,7 @@ class App extends Component {
 
         <h3 style={{margin: '0 auto', textAlign: 'center'}}> Basic </h3>
         <ReactHover
+          className='basic'
           styles={styles.basic}
           componentHtml={componentHtml.basicComponentHtml}
           options={optionsCursorFalse}

@@ -1,17 +1,18 @@
 import React, { Component, PropTypes } from 'react'
 import HoverComponent from './lib/HoverComponent'
 import TriggerComponent from './lib/TriggerComponent'
+import classnames from 'classnames'
 
 export default class ReactHover extends Component {
   static propTypes = {
     styles: PropTypes.object.isRequired,
     componentHtml: PropTypes.object.isRequired,
-    options: PropTypes.object.isRequired
+    options: PropTypes.object.isRequired,
+    className: PropTypes.string
   }
 
   constructor (props) {
     super(props)
-
     this.state = {
       triggerComponentStyle: this.props.styles.trigger,
       hoverComponentStyle: this.props.styles.hoverComponent
@@ -19,10 +20,10 @@ export default class ReactHover extends Component {
   }
 
   render () {
-    const { componentHtml } = this.props
+    const { componentHtml, className } = this.props
     const { triggerComponentStyle, hoverComponentStyle } = this.state
     return (
-      <div>
+      <div className={classnames(className)} >
         <TriggerComponent
           styles={triggerComponentStyle}
           componentHtml={componentHtml}

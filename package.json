@@ -53,6 +53,7 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "babel-tape-runner": "^2.0.1",
+    "classnames": "^2.2.5",
     "codecov.io": "^0.1.6",
     "coveralls": "^2.11.6",
     "enzyme": "^2.3.0",
