@@ -72,6 +72,7 @@ $ npm install --save react-hover
 
 ```js
 <ReactHover
+    className='basic'
     styles={styles.basic}
     componentHtml={componentHtml.basicComponentHtml}
     options={optionsCursorFalse}
