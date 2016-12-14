@@ -1,12 +1,12 @@
 import React, { Component, PropTypes } from 'react'
-import HoverComponent from './lib/HoverComponent'
-import TriggerComponent from './lib/TriggerComponent'
+import Hover from './lib/Hover'
+import Trigger from './lib/Trigger'
 import classnames from 'classnames'
 
-export default class ReactHover extends Component {
+class ReactHover extends Component {
   static propTypes = {
+    children: PropTypes.object.isRequired,
     styles: PropTypes.object.isRequired,
-    componentHtml: PropTypes.object.isRequired,
     options: PropTypes.object.isRequired,
     className: PropTypes.string
   }
@@ -14,31 +14,47 @@ export default class ReactHover extends Component {
   constructor (props) {
     super(props)
     this.state = {
+      children: PropTypes.object,
       triggerComponentStyle: this.props.styles.trigger,
       hoverComponentStyle: this.props.styles.hoverComponent
     }
   }
 
   render () {
-    const { componentHtml, className } = this.props
-    const { triggerComponentStyle, hoverComponentStyle } = this.state
+    const { className } = this.props
+    const { triggerComponentStyle } = this.state
+    debugger;
+    const childrenWithProps = React.Children.map(this.props.children,
+        (child) => React.cloneElement(child, {
+          
+                styles: triggerComponentStyle,
+                setVisibility: this.setVisibility.bind(this),
+                getCursorPos: this.getCursorPos.bind(this)
+
+          // child.type.name === ('Trigger') ?
+          //       styles={triggerComponentStyle}
+          //       setVisibility={this.setVisibility.bind(this)}
+          //       getCursorPos={this.getCursorPos.bind(this)}
+          //   :
+          //       styles={hoverComponentStyle}
+          // ;)
+          }
+        )
+    );
+    debugger;
     return (
-      <div className={classnames(className)} >
-        <TriggerComponent
-          styles={triggerComponentStyle}
-          componentHtml={componentHtml}
-          setVisibility={this.setVisibility.bind(this)}
-          getCursorPos={this.getCursorPos.bind(this)}
-        />
-        <HoverComponent
-          styles={hoverComponentStyle}
-          componentHtml={componentHtml}
-        />
+      <div className={classnames(className)}
+           setVisibility={this.setVisibility.bind(this)}
+           getCursorPos={this.getCursorPos.bind(this)}
+      >
+
+        {childrenWithProps}
       </div>
     )
   }
 
   setVisibility (flag) {
+    debugger;
     let { hoverComponentStyle } = this.state
     let updatedStyles = null
     if (flag) {
@@ -72,3 +88,9 @@ export default class ReactHover extends Component {
     })
   }
 }
+
+
+ReactHover.Trigger = Trigger;
+ReactHover.Hover = Hover;
+
+export default ReactHover;

@@ -1,15 +1,15 @@
 import React, { Component, PropTypes } from 'react'
 
-export default class TriggerComponent extends Component {
+export default class Trigger extends Component {
   static propTypes = {
+    children: PropTypes.object,
     styles: PropTypes.object.isRequired,
-    componentHtml: PropTypes.object.isRequired,
     setVisibility: PropTypes.func.isRequired,
     getCursorPos: PropTypes.func.isRequired
   }
 
   render () {
-    const { styles, componentHtml } = this.props
+    const { styles } = this.props
     return (
       <div
         style={styles}
@@ -18,8 +18,8 @@ export default class TriggerComponent extends Component {
         onMouseMove={this.onMouseMove.bind(this)}
         onTouchStart={this.onTouchStart.bind(this)}
         onTouchEnd={this.onTouchEnd.bind(this)}
-        dangerouslySetInnerHTML={{ __html: componentHtml.trigger }}
         >
+        {this.props.children}
       </div>
     )
   }
