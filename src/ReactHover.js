@@ -22,32 +22,28 @@ class ReactHover extends Component {
 
   render () {
     const { className } = this.props
-    const { triggerComponentStyle } = this.state
+    const { triggerComponentStyle, hoverComponentStyle } = this.state
     debugger;
-    const childrenWithProps = React.Children.map(this.props.children,
-        (child) => React.cloneElement(child, {
-          
-                styles: triggerComponentStyle,
-                setVisibility: this.setVisibility.bind(this),
-                getCursorPos: this.getCursorPos.bind(this)
-
-          // child.type.name === ('Trigger') ?
-          //       styles={triggerComponentStyle}
-          //       setVisibility={this.setVisibility.bind(this)}
-          //       getCursorPos={this.getCursorPos.bind(this)}
-          //   :
-          //       styles={hoverComponentStyle}
-          // ;)
-          }
-        )
-    );
+    let childrenWithProps = [];
+    for (let child of this.props.children) {
+      if (child.type.name == 'Trigger') {
+         childrenWithProps.push(React.cloneElement(child, {
+            styles: triggerComponentStyle,
+            setVisibility:this.setVisibility.bind(this),
+            getCursorPos: this.getCursorPos.bind(this)
+          }));
+      } else if(child.type.name == 'Hover') {
+         childrenWithProps.push(React.cloneElement(child, {
+            styles: hoverComponentStyle
+         }));
+      }
+    }
     debugger;
     return (
       <div className={classnames(className)}
            setVisibility={this.setVisibility.bind(this)}
            getCursorPos={this.getCursorPos.bind(this)}
       >
-
         {childrenWithProps}
       </div>
     )
