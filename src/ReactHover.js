@@ -39,14 +39,27 @@ class ReactHover extends Component {
       }
     }
     debugger;
-    return (
-      <div className={classnames(className)}
-           setVisibility={this.setVisibility.bind(this)}
-           getCursorPos={this.getCursorPos.bind(this)}
-      >
-        {childrenWithProps}
-      </div>
-    )
+    for (let child of childrenWithProps) {
+      debugger;
+      if (child.type.name == 'Trigger') {
+        return (
+          <Trigger>
+            {child}
+          </Trigger>
+        )
+      } else if (child.type.name == 'Hover') {
+        return (
+           <div className={classnames(className)}
+            setVisibility={this.setVisibility.bind(this)}
+            getCursorPos={this.getCursorPos.bind(this)}
+        >
+          <Hover>
+            {child}
+          </Hover>
+        </div>
+        )
+      }
+    }
   }
 
   setVisibility (flag) {
