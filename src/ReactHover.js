@@ -1,11 +1,10 @@
 import React, { Component, PropTypes } from 'react'
 import Hover from './lib/Hover'
 import Trigger from './lib/Trigger'
-import classnames from 'classnames'
 
 class ReactHover extends Component {
   static propTypes = {
-    children: PropTypes.object.isRequired,
+    children: PropTypes.array.isRequired,
     styles: PropTypes.object.isRequired,
     options: PropTypes.object.isRequired,
     className: PropTypes.string
@@ -20,10 +19,25 @@ class ReactHover extends Component {
     }
   }
 
-  render () {
-    const { className } = this.props
-    const { triggerComponentStyle, hoverComponentStyle } = this.state
+  renderItem (item) {
     debugger;
+    if (item.type.name == 'Trigger') {
+      return (
+        <Trigger>
+          {item}
+        </Trigger>
+      )
+    } else if (item.type.name == 'Hover') {
+      return (
+        <Hover>
+          {item}
+        </Hover>
+      )
+    }
+  }
+
+  render () {
+    const { triggerComponentStyle, hoverComponentStyle } = this.state
     let childrenWithProps = [];
     for (let child of this.props.children) {
       if (child.type.name == 'Trigger') {
@@ -38,28 +52,14 @@ class ReactHover extends Component {
          }));
       }
     }
-    debugger;
-    for (let child of childrenWithProps) {
-      debugger;
-      if (child.type.name == 'Trigger') {
-        return (
-          <Trigger>
-            {child}
-          </Trigger>
-        )
-      } else if (child.type.name == 'Hover') {
-        return (
-           <div className={classnames(className)}
-            setVisibility={this.setVisibility.bind(this)}
-            getCursorPos={this.getCursorPos.bind(this)}
-        >
-          <Hover>
-            {child}
-          </Hover>
+
+    return (
+      <div>
+        <div>
+          {childrenWithProps.map(item => this.renderItem(item))}
         </div>
-        )
-      }
-    }
+      </div>
+    )
   }
 
   setVisibility (flag) {

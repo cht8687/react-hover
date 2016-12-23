@@ -2,14 +2,13 @@ import React, { Component, PropTypes } from 'react'
 
 export default class Trigger extends Component {
   static propTypes = {
-    children: PropTypes.object,
-    styles: PropTypes.object.isRequired,
-    setVisibility: PropTypes.func.isRequired,
-    getCursorPos: PropTypes.func.isRequired
+    children: PropTypes.object
   }
 
   render () {
-    const { styles } = this.props
+    debugger;
+    const { styles } = this.props.children.props;
+
     return (
       <div
         style={styles}
@@ -19,33 +18,35 @@ export default class Trigger extends Component {
         onTouchStart={this.onTouchStart.bind(this)}
         onTouchEnd={this.onTouchEnd.bind(this)}
         >
-        {this.props.children}
+        {this.props.children.props.children}
       </div>
     )
   }
 
   onMouseOver () {
-    const { setVisibility } = this.props
+    debugger;
+    const { setVisibility } =  this.props.children.props;
     setVisibility(true)
   }
 
   onMouseOut () {
-    const { setVisibility } = this.props
+    debugger;
+    const { setVisibility } =  this.props.children.props;
     setVisibility(false)
   }
 
   onMouseMove (e) {
-    const { getCursorPos } = this.props
+    const { getCursorPos } =  this.props.children.props;
     getCursorPos(e)
   }
 
   onTouchStart () {
-    const { setVisibility } = this.props
+    const { setVisibility } =  this.props.children.props;
     setVisibility(true)
   }
 
   onTouchEnd () {
-    const { setVisibility } = this.props
+    const { setVisibility } =  this.props.children.props;
     setVisibility(false)
   }
 }
