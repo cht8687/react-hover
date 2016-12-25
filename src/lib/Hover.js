@@ -2,7 +2,8 @@ import React, { Component, PropTypes } from 'react'
 
 export default class Hover extends Component {
   static propTypes = {
-     children: PropTypes.object
+     children: PropTypes.object,
+     styles: PropTypes.object
   }
 
   render () {
