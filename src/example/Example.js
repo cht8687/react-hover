@@ -20,10 +20,10 @@ class App extends Component {
           styles={styles.basic}
           options={optionsCursorFalse}>
           <ReactHover.Trigger>
-            <hoverComponent></hoverComponent>
+            <triggerComponent></triggerComponent>
           </ReactHover.Trigger>
           <ReactHover.Hover>
-            <triggerComponent></triggerComponent>
+            <hoverComponent></hoverComponent>
           </ReactHover.Hover>
         </ReactHover>
       </div>
