@@ -14,8 +14,8 @@ export default class ReactHover extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      triggerComponentStyle: this.props.styles.trigger,
-      hoverComponentStyle: this.props.styles.hoverComponent
+      triggerComponentStyle: props.styles.trigger,
+      hoverComponentStyle: props.styles.hoverComponent
     }
   }
 
@@ -42,9 +42,9 @@ export default class ReactHover extends Component {
     let { hoverComponentStyle } = this.state
     let updatedStyles = null
     if (flag) {
-      updatedStyles = Object.assign({}, hoverComponentStyle, {display: 'block'})
+      updatedStyles = {...hoverComponentStyle, display: 'block'}
     } else {
-      updatedStyles = Object.assign({}, hoverComponentStyle, {display: 'none'})
+      updatedStyles = {...hoverComponentStyle, display: 'none'}
     }
     this.setState({
       hoverComponentStyle: updatedStyles
@@ -55,18 +55,18 @@ export default class ReactHover extends Component {
     const cursorX = e.pageX
     const cursorY = e.pageY
     let {options: { followCursor, shiftX, shiftY }} = this.props
-    const { hoverComponentStyle } = this.state
+    let { hoverComponentStyle } = this.state
     let updatedStyles = null
     if (!followCursor) {
       return
     }
-    if (shiftX == NaN) {
+    if (isNaN(shiftX)) {
       shiftX = 0
     }
-    if (shiftY == NaN) {
+    if (isNaN(shiftY)) {
       shiftY = 0
     }
-    updatedStyles = Object.assign({}, hoverComponentStyle, {top: cursorY + shiftY, left: cursorX + shiftX})
+    updatedStyles = {...hoverComponentStyle, top: cursorY + shiftY, left: cursorX + shiftX}
     this.setState({
       hoverComponentStyle: updatedStyles
     })
