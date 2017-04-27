@@ -5,8 +5,10 @@ import * as styles from './css'
 import HoverComponent  from './HoverComponent';
 import TriggerComponent from './TriggerComponent';
 
-const optionsCursorFalse = {
-    followCursor: false
+const optionsCursorTrueWithMargin = {
+  followCursor: true,
+  shiftX: 20,
+  shiftY: 0
 }
 
 class App extends Component {
@@ -18,7 +20,7 @@ class App extends Component {
         <ReactHover
           className='basic'
           styles={styles.basic}
-          options={optionsCursorFalse}>
+          options={optionsCursorTrueWithMargin}>
           <ReactHover.Trigger>
             <TriggerComponent />
           </ReactHover.Trigger>

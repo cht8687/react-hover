@@ -1,7 +1,7 @@
 export const basic = {
   trigger: {
-    background: '#E0037E',
-    width: '80px',
+    background: '#abbcf1',
+    width: '96px',
     margin: '0 auto'
   },
 
@@ -12,8 +12,7 @@ export const basic = {
     width: '300px',
     background: '#E8E27E',
     display: 'none',
-    position: 'absolute',
-    margin: '-20px 0 0 820px'
+    position: 'absolute'
   }
 }
 
@@ -31,8 +30,7 @@ export const advanced = {
     width: '300px',
     background: '#E8E27E',
     display: 'none',
-    position: 'absolute',
-    margin: '20px 0 0 450px'
+    position: 'absolute'
   },
 
   img: {
