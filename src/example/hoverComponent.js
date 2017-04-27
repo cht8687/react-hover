@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class hoverComponent extends Component {
+export default class HoverComponent extends Component {
 
     render () {
         return (

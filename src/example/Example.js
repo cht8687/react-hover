@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { render } from 'react-dom'
 import ReactHover from '..'
 import * as styles from './css'
-import { hoverComponent } from './hoverComponent';
-import { triggerComponent } from './triggerComponent';
+import HoverComponent  from './hoverComponent';
+import TriggerComponent from './triggerComponent';
 
 const optionsCursorFalse = {
     followCursor: false
@@ -20,10 +20,10 @@ class App extends Component {
           styles={styles.basic}
           options={optionsCursorFalse}>
           <ReactHover.Trigger>
-            <triggerComponent></triggerComponent>
+            <TriggerComponent />
           </ReactHover.Trigger>
           <ReactHover.Hover>
-            <hoverComponent></hoverComponent>
+            <HoverComponent />
           </ReactHover.Hover>
         </ReactHover>
       </div>

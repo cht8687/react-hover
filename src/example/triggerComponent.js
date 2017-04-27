@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class triggerComponent extends Component {
+export default class TriggerComponent extends Component {
 
     render () {
         return (
