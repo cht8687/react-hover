@@ -7,9 +7,8 @@ export default class Hover extends Component {
   }
 
   render () {
-    debugger;
     const { styles } = this.props.children.props;
-
+    
     return (
       <div style={styles}>
         {this.props.children.props.children}

@@ -10,7 +10,6 @@ export default class Trigger extends Component {
   }
 
   render () {
-    debugger;
     const { styles } = this.props.children.props;
 
     return (
@@ -28,13 +27,11 @@ export default class Trigger extends Component {
   }
 
   onMouseOver () {
-    debugger;
     const { setVisibility } =  this.props.children.props;
     setVisibility(true)
   }
 
   onMouseOut () {
-    debugger;
     const { setVisibility } =  this.props.children.props;
     setVisibility(false)
   }

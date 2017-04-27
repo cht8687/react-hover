@@ -20,7 +20,6 @@ class ReactHover extends Component {
   }
 
   renderItem (item) {
-    debugger;
     if (item.type.name == 'Trigger') {
       return (
         <Trigger>
@@ -39,7 +38,6 @@ class ReactHover extends Component {
   render () {
     const { triggerComponentStyle, hoverComponentStyle } = this.state
     let childrenWithProps = [];
-    debugger
     for (let child of this.props.children) {
       if (child.type.name == 'Trigger') {
          childrenWithProps.push(React.cloneElement(child, {
@@ -64,7 +62,6 @@ class ReactHover extends Component {
   }
 
   setVisibility (flag) {
-    debugger;
     let { hoverComponentStyle } = this.state
     let updatedStyles = null
     if (flag) {
