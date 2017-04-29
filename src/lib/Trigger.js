@@ -10,7 +10,7 @@ export default class Trigger extends Component {
   }
 
   render () {
-    const { styles } = this.props.children.props;
+    const { styles } = this.props.children.props
 
     return (
       <div
@@ -27,27 +27,27 @@ export default class Trigger extends Component {
   }
 
   onMouseOver () {
-    const { setVisibility } =  this.props.children.props;
+    const { setVisibility } = this.props.children.props
     setVisibility(true)
   }
 
   onMouseOut () {
-    const { setVisibility } =  this.props.children.props;
+    const { setVisibility } = this.props.children.props
     setVisibility(false)
   }
 
   onMouseMove (e) {
-    const { getCursorPos } =  this.props.children.props;
+    const { getCursorPos } = this.props.children.props
     getCursorPos(e)
   }
 
   onTouchStart () {
-    const { setVisibility } =  this.props.children.props;
+    const { setVisibility } = this.props.children.props
     setVisibility(true)
   }
 
   onTouchEnd () {
-    const { setVisibility } =  this.props.children.props;
+    const { setVisibility } = this.props.children.props
     setVisibility(false)
   }
 }

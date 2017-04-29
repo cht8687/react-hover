@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { render } from 'react-dom'
 import ReactHover from '..'
 import * as styles from './css'
-import HoverComponent  from './HoverComponent';
-import TriggerComponent from './TriggerComponent';
+import HoverComponent from './HoverComponent'
+import TriggerComponent from './TriggerComponent'
 
 const optionsCursorTrueWithMargin = {
   followCursor: true,
