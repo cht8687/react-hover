@@ -5,7 +5,6 @@ import Trigger from './lib/Trigger'
 class ReactHover extends Component {
   static propTypes = {
     children: PropTypes.array.isRequired,
-    styles: PropTypes.object.isRequired,
     options: PropTypes.object.isRequired,
     className: PropTypes.string
   }
@@ -14,8 +13,9 @@ class ReactHover extends Component {
     super(props)
     this.state = {
       children: PropTypes.object,
-      triggerComponentStyle: this.props.styles.trigger,
-      hoverComponentStyle: this.props.styles.hoverComponent
+      hoverComponentStyle: {
+        display: 'none'
+      }
     }
   }
 
@@ -36,12 +36,11 @@ class ReactHover extends Component {
   }
 
   render () {
-    const { triggerComponentStyle, hoverComponentStyle } = this.state
+    const { hoverComponentStyle } = this.state
     let childrenWithProps = [];
     for (let child of this.props.children) {
       if (child.type.name == 'Trigger') {
          childrenWithProps.push(React.cloneElement(child, {
-            styles: triggerComponentStyle,
             setVisibility:this.setVisibility.bind(this),
             getCursorPos: this.getCursorPos.bind(this)
           }));
@@ -95,7 +94,6 @@ class ReactHover extends Component {
     })
   }
 }
-
 
 ReactHover.Trigger = Trigger;
 ReactHover.Hover = Hover;
