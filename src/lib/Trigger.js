@@ -3,7 +3,6 @@ import React, { Component, PropTypes } from 'react'
 export default class Trigger extends Component {
   static propTypes = {
     children: PropTypes.object,
-    componentHtml: PropTypes.object,
     setVisibility: PropTypes.func,
     getCursorPos: PropTypes.func
   }
