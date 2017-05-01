@@ -54,9 +54,7 @@ class ReactHover extends Component {
 
     return (
       <div>
-        <div>
-          {childrenWithProps.map(item => this.renderItem(item))}
-        </div>
+        {childrenWithProps.map(item => this.renderItem(item))}
       </div>
     )
   }
