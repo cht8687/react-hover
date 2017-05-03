@@ -1,16 +1,8 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
 import ReactHover from '..'
-import * as styles from './css'
-import * as componentHtml from './componentHtml'
-
-const optionsCursorFalse = {
-  followCursor: false
-}
-
-const optionsCursorTrue = {
-  followCursor: false
-}
+import HoverComponent from './HoverComponent'
+import TriggerComponent from './TriggerComponent'
 
 const optionsCursorTrueWithMargin = {
   followCursor: true,
@@ -23,28 +15,50 @@ class App extends Component {
   render () {
     return (
       <div>
-
-        <h3 style={{margin: '0 auto', textAlign: 'center'}}> Basic </h3>
+        <h3> There are two ways that you can use this library in Version 2</h3>
+        <p style={{margin: '0 auto'}}> 1. Use custom components as trigger and hover </p>
+        <pre style={{margin: '0 auto'}}>{`
+          <ReactHover
+            options={optionsCursorTrueWithMargin}>
+            <ReactHover.Trigger>
+              <TriggerComponent />
+            </ReactHover.Trigger>
+            <ReactHover.Hover>
+              <HoverComponent />
+            </ReactHover.Hover>
+            </ReactHover>`}
+        </pre>
         <ReactHover
-          className='basic'
-          styles={styles.basic}
-          componentHtml={componentHtml.basicComponentHtml}
-          options={optionsCursorFalse}
-        />
+          options={optionsCursorTrueWithMargin}>
+          <ReactHover.Trigger>
+            <TriggerComponent />
+          </ReactHover.Trigger>
+          <ReactHover.Hover>
+            <HoverComponent />
+          </ReactHover.Hover>
+        </ReactHover>
 
-        <h3 style={{margin: '0 auto', marginTop: '100px', textAlign: 'center'}}> You can include anything, e.g. image </h3>
+        <p style={{margin: '0 auto'}}> 2. Use HTML as trigger and hover </p>
+        <pre style={{margin: '0 auto'}}>{`
+          <ReactHover
+            options={optionsCursorTrueWithMargin}>
+            <ReactHover.Trigger>
+              <h1 style={{background: '#abbcf1', width: '200px'}}> Hover on me </h1>
+            </ReactHover.Trigger>
+            <ReactHover.Hover>
+              <h1> I am hover HTML </h1>
+            </ReactHover.Hover>
+          </ReactHover>`}
+        </pre>
         <ReactHover
-          styles={styles.advanced}
-          componentHtml={componentHtml.advancedComponentHtml}
-          options={optionsCursorTrue}
-        />
-
-        <h3 style={{margin: '0 auto', marginTop: '100px', textAlign: 'center'}}> You can set curor follow options, so the pop up will follow the mouse cursor.</h3>
-        <ReactHover
-          styles={styles.cursor}
-          componentHtml={componentHtml.advancedComponentHtml}
-          options={optionsCursorTrueWithMargin}
-        />
+          options={optionsCursorTrueWithMargin}>
+          <ReactHover.Trigger>
+            <h1 style={{background: '#abbcf1', width: '200px'}}> Hover on me </h1>
+          </ReactHover.Trigger>
+          <ReactHover.Hover>
+            <h1> I am hover HTML </h1>
+          </ReactHover.Hover>
+        </ReactHover>
 
       </div>
     )

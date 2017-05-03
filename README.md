@@ -70,60 +70,36 @@ $ npm install --save react-hover
 
 ## Usage
 
+You can turn plain HTML or your custom trigger/hover components in React-hover.
+
+Below is the example of custom components:
 ```js
 <ReactHover
-    className='basic'
-    styles={styles.basic}
-    componentHtml={componentHtml.basicComponentHtml}
-    options={optionsCursorFalse}
-/>
-
+  options={optionsCursorTrueWithMargin}>
+  <ReactHover.Trigger>
+    <TriggerComponent />
+  </ReactHover.Trigger>
+  <ReactHover.Hover>
+    <HoverComponent />
+  </ReactHover.Hover>
+</ReactHover>
 ```
+
+Or plain HTML element:
+
+```js
+<ReactHover
+  options={optionsCursorTrueWithMargin}>
+  <ReactHover.Trigger>
+    <h1 style={{background: '#abbcf1', width: '200px'}}> Hover on me </h1>
+  </ReactHover.Trigger>
+  <ReactHover.Hover>
+    <h1> I am hover HTML </h1>
+  </ReactHover.Hover>
+</ReactHover>
+```
+
 ## Options
-
-#### `styles`: PropTypes.object.isRequired
-
-```js
-export const styles = {
-  trigger: {
-    background: '#E0037E',
-    width: '200px',
-    margin: '0 auto'
-  },
-
-  hoverComponent: {
-    height: '200px',
-    overflowY: 'auto',
-    outline: '1px solid blue',
-    width: '300px',
-    background: '#E8E27E',
-    display: 'none',
-    position: 'absolute',
-    margin: '-20px 0 0 717px'
-  }
-};
-```
-`trigger` object is for the style of trigger component. 
-`hoverComponent` is for hover object.
-You can modify the css to anything to fit your needs. In other words, the whole styles are flexible.
-
-**Note that you can use other module system instead of ES6 for exporting this object.
-
-* You can turn anything into hover component.
-* You can adjust CSS to make hover component show in any position.
-
-
-#### `componentHtml`: PropTypes.object.isRequired
-
-```js
-export const componentHtml = {
-  hoverComponent: '<h1> pop up header </h1> <p> pop up content </p>',
-  trigger: 'hover me'
-};
-
-```
-`componentHtml` contains the html code which you'd like to display.
-`trigger` object can receive `mouseOver` event and once triggered, the `hoverComponent` will show up.
 
 #### `options`: PropTypes.object.isRequired
 
