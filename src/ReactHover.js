@@ -20,16 +20,16 @@ class ReactHover extends Component {
     }
   }
 
-  renderItem (item) {
+  renderItem (item, index) {
     if (item.type.name == 'Trigger') {
       return (
-        <Trigger>
+        <Trigger key={index}>
           {item}
         </Trigger>
       )
     } else if (item.type.name == 'Hover') {
       return (
-        <Hover>
+        <Hover key={index}>
           {item}
         </Hover>
       )
@@ -54,7 +54,7 @@ class ReactHover extends Component {
 
     return (
       <div>
-        {childrenWithProps.map(item => this.renderItem(item))}
+        {childrenWithProps.map((item,index) => this.renderItem(item, index))}
       </div>
     )
   }
