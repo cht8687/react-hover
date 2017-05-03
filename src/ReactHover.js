@@ -88,7 +88,6 @@ class ReactHover extends Component {
       shiftY = 0
     }
     updatedStyles = Object.assign({}, hoverComponentStyle, {top: cursorY + shiftY, left: cursorX + shiftX})
-    console.log(updatedStyles)
     this.setState({
       hoverComponentStyle: updatedStyles
     })
