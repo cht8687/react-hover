@@ -7,26 +7,26 @@ export default class Trigger extends Component {
     getCursorPos: PropTypes.func
   }
 
-   constructor (props) {
+  constructor (props) {
     super(props)
     this.state = {
       styles: {}
     }
   }
 
-  componentDidMount() {
-    let childStyles = this.refs.triggerContainer.children[0].style;
+  componentDidMount () {
+    let childStyles = this.refs.triggerContainer.children[0].style
     this.setState({
       styles: {
-        width: childStyles.width, 
-        height: childStyles.height, 
+        width: childStyles.width,
+        height: childStyles.height,
         margin: childStyles.margin
       }
     })
   }
 
   render () {
-    const {styles} = this.state;
+    const {styles} = this.state
     return (
       <div
         onMouseOver={this.onMouseOver.bind(this)}
@@ -34,7 +34,7 @@ export default class Trigger extends Component {
         onMouseMove={this.onMouseMove.bind(this)}
         onTouchStart={this.onTouchStart.bind(this)}
         onTouchEnd={this.onTouchEnd.bind(this)}
-        ref="triggerContainer"
+        ref='triggerContainer'
         style={styles}
         >
         {this.props.children.props.children}
