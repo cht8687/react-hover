@@ -1,8 +1,8 @@
 import React from 'react'
 import test from 'tape'
 import ReactHover from '../src/ReactHover'
-import HoverComponent from '../src/example/HoverComponent'
-import TriggerComponent from '../src/example/TriggerComponent'
+import HoverComponent from '../src/example/hoverComponent'
+import TriggerComponent from '../src/example/triggerComponent'
 import { shallow, mount } from 'enzyme'
 import sinon from 'sinon'
 
