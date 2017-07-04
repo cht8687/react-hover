@@ -1,6 +1,7 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import Hover from './lib/Hover'
 import Trigger from './lib/Trigger'
+import PropTypes from 'prop-types'
 
 class ReactHover extends Component {
   static propTypes = {
@@ -9,7 +10,7 @@ class ReactHover extends Component {
     className: PropTypes.string
   }
 
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       children: PropTypes.object,
@@ -20,7 +21,7 @@ class ReactHover extends Component {
     }
   }
 
-  renderItem (item, index) {
+  renderItem(item, index) {
     if (item.type.name == 'Trigger') {
       return (
         <Trigger key={index}>
@@ -36,46 +37,46 @@ class ReactHover extends Component {
     }
   }
 
-  render () {
+  render() {
     const { hoverComponentStyle } = this.state
     let childrenWithProps = [];
     for (let child of this.props.children) {
       if (child.type.name == 'Trigger') {
-         childrenWithProps.push(React.cloneElement(child, {
-            setVisibility:this.setVisibility.bind(this),
-            getCursorPos: this.getCursorPos.bind(this)
-          }));
-      } else if(child.type.name == 'Hover') {
-         childrenWithProps.push(React.cloneElement(child, {
-            styles: hoverComponentStyle
-         }));
+        childrenWithProps.push(React.cloneElement(child, {
+          setVisibility: this.setVisibility.bind(this),
+          getCursorPos: this.getCursorPos.bind(this)
+        }));
+      } else if (child.type.name == 'Hover') {
+        childrenWithProps.push(React.cloneElement(child, {
+          styles: hoverComponentStyle
+        }));
       }
     }
 
     return (
       <div>
-        {childrenWithProps.map((item,index) => this.renderItem(item, index))}
+        {childrenWithProps.map((item, index) => this.renderItem(item, index))}
       </div>
     )
   }
 
-  setVisibility (flag) {
+  setVisibility(flag) {
     let { hoverComponentStyle } = this.state
     let updatedStyles = null
     if (flag) {
-      updatedStyles = {...hoverComponentStyle, display: 'block'}
+      updatedStyles = { ...hoverComponentStyle, display: 'block' }
     } else {
-      updatedStyles = {...hoverComponentStyle, display: 'none'}
+      updatedStyles = { ...hoverComponentStyle, display: 'none' }
     }
     this.setState({
       hoverComponentStyle: updatedStyles
     })
   }
 
-  getCursorPos (e) {
+  getCursorPos(e) {
     const cursorX = e.pageX
     const cursorY = e.pageY
-    let {options: { followCursor, shiftX, shiftY }} = this.props
+    let { options: { followCursor, shiftX, shiftY } } = this.props
     let { hoverComponentStyle } = this.state
     let updatedStyles = null
     if (!followCursor) {
@@ -87,7 +88,7 @@ class ReactHover extends Component {
     if (isNaN(shiftY)) {
       shiftY = 0
     }
-    updatedStyles = {...hoverComponentStyle, top: cursorY + shiftY, left: cursorX + shiftX}
+    updatedStyles = { ...hoverComponentStyle, top: cursorY + shiftY, left: cursorX + shiftX }
     this.setState({
       hoverComponentStyle: updatedStyles
     })

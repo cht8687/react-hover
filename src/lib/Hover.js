@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 export default class Hover extends Component {
   static propTypes = {
@@ -6,7 +7,7 @@ export default class Hover extends Component {
     styles: PropTypes.object
   }
 
-  render () {
+  render() {
     const { styles } = this.props.children.props
     return (
       <div style={styles}>
