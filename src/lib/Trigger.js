@@ -8,14 +8,14 @@ export default class Trigger extends Component {
     getCursorPos: PropTypes.func
   }
 
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       styles: {}
     }
   }
 
-  componentDidMount() {
+  componentDidMount () {
     let childStyles = this.refs.triggerContainer.children[0].style
     this.setState({
       styles: {
@@ -26,7 +26,7 @@ export default class Trigger extends Component {
     })
   }
 
-  render() {
+  render () {
     const { styles } = this.state
     return (
       <div
@@ -43,27 +43,27 @@ export default class Trigger extends Component {
     )
   }
 
-  onMouseOver() {
+  onMouseOver () {
     const { setVisibility } = this.props.children.props
     setVisibility(true)
   }
 
-  onMouseOut() {
+  onMouseOut () {
     const { setVisibility } = this.props.children.props
     setVisibility(false)
   }
 
-  onMouseMove(e) {
+  onMouseMove (e) {
     const { getCursorPos } = this.props.children.props
     getCursorPos(e)
   }
 
-  onTouchStart() {
+  onTouchStart () {
     const { setVisibility } = this.props.children.props
     setVisibility(true)
   }
 
-  onTouchEnd() {
+  onTouchEnd () {
     const { setVisibility } = this.props.children.props
     setVisibility(false)
   }
