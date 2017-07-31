@@ -41,16 +41,18 @@ class ReactHover extends Component {
     const { hoverComponentStyle } = this.state
     let childrenWithProps = [];
     for (let child of this.props.children) {
-      if (child.type.name == 'Trigger') {
-        childrenWithProps.push(React.cloneElement(child, {
-          setVisibility: this.setVisibility.bind(this),
-          getCursorPos: this.getCursorPos.bind(this)
-        }));
-      } else if (child.type.name == 'Hover') {
-        childrenWithProps.push(React.cloneElement(child, {
-          styles: hoverComponentStyle
-        }));
-      }
+      if (child.type) {
+        if (child.type.name == 'Trigger') {
+          childrenWithProps.push(React.cloneElement(child, {
+            setVisibility: this.setVisibility.bind(this),
+            getCursorPos: this.getCursorPos.bind(this)
+          }));
+        } else if (child.type.name == 'Hover') {
+          childrenWithProps.push(React.cloneElement(child, {
+            styles: hoverComponentStyle
+          }));
+        }
+      } 
     }
 
     return (
