@@ -1,18 +1,19 @@
 import React from 'react'
 import test from 'tape'
 import ReactHover from '../src/ReactHover'
-import HoverComponent from '../src/example/hoverComponent'
-import TriggerComponent from '../src/example/triggerComponent'
-import { shallow, mount } from 'enzyme'
-import sinon from 'sinon'
+import HoverComponent from '../src/example/HoverComponent'
+import TriggerComponent from '../src/example/TriggerComponent'
+import { shallow } from 'enzyme'
 
 test('----- React Component Tests: ReactHover -----', t => {
   t.plan(3)
   t.ok(ReactHover instanceof Function, 'should be function')
-  const optionsCursorFalse = {
-   followCursor: false
+  const optionsCursorTrueWithMargin = {
+    followCursor: true,
+    shiftX: 20,
+    shiftY: 0
   }
-  const wrapperShallow = shallow( <ReactHover  options={optionsCursorFalse}>
+  const wrapperShallow = shallow( <ReactHover  options={optionsCursorTrueWithMargin}>
               <ReactHover.Trigger>
                 <TriggerComponent />
               </ReactHover.Trigger>
