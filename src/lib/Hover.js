@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 export default class Hover extends Component {
   static propTypes = {
+    type: PropTypes.string,
     children: PropTypes.object,
     styles: PropTypes.object
   }

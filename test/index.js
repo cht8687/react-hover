@@ -14,10 +14,10 @@ test('----- React Component Tests: ReactHover -----', t => {
     shiftY: 0
   }
   const wrapperShallow = shallow( <ReactHover  options={optionsCursorTrueWithMargin}>
-              <ReactHover.Trigger>
+              <ReactHover.Trigger type='trigger'>
                 <TriggerComponent />
               </ReactHover.Trigger>
-              <ReactHover.Hover>
+              <ReactHover.Hover type='hover'>
                 <HoverComponent />
               </ReactHover.Hover> </ReactHover>)
   t.equal(1, wrapperShallow.find('TriggerComponent').length)

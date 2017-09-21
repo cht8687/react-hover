@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 export default class Trigger extends Component {
   static propTypes = {
+    type: PropTypes.string,
     children: PropTypes.object,
     setVisibility: PropTypes.func,
     getCursorPos: PropTypes.func
