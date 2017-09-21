@@ -76,10 +76,10 @@ Below is the example of custom components:
 ```js
 <ReactHover
   options={optionsCursorTrueWithMargin}>
-  <ReactHover.Trigger>
+  <ReactHover.Trigger type='trigger'>
     <TriggerComponent />
   </ReactHover.Trigger>
-  <ReactHover.Hover>
+  <ReactHover.Hover type='hover'>
     <HoverComponent />
   </ReactHover.Hover>
 </ReactHover>
@@ -90,10 +90,10 @@ Or plain HTML element:
 ```js
 <ReactHover
   options={optionsCursorTrueWithMargin}>
-  <ReactHover.Trigger>
+  <ReactHover.Trigger type='trigger'>
     <h1 style={{background: '#abbcf1', width: '200px'}}> Hover on me </h1>
   </ReactHover.Trigger>
-  <ReactHover.Hover>
+  <ReactHover.Hover type='hover'>
     <h1> I am hover HTML </h1>
   </ReactHover.Hover>
 </ReactHover>
@@ -118,6 +118,20 @@ const options = {
 `shiftX`: left-right shift the hover object to the mouse cursor
 `shiftY`: up-down shift the hover object to the mouse cursor
 
+
+## type
+
+#### `type`: PropTypes.string
+
+Set the type.
+
+```js
+
+<ReactHover.Trigger type='trigger'>
+<ReactHover.Hover type='hover'>
+
+```
+This prop defines the type name. It must be declared as above if you minify in your code in production.
 
 ## Development
 
