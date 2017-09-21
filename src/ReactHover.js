@@ -22,13 +22,13 @@ class ReactHover extends Component {
   }
 
   renderItem(item, index) {
-    if (item.type.name == 'Trigger') {
+    if (item.type.name === 'Trigger' || item.props.type === 'trigger') {
       return (
         <Trigger key={index}>
           {item}
         </Trigger>
       )
-    } else if (item.type.name == 'Hover') {
+    } else if (item.type.name === 'hover' || item.props.type === 'hover') {
       return (
         <Hover key={index}>
           {item}
@@ -41,18 +41,18 @@ class ReactHover extends Component {
     const { hoverComponentStyle } = this.state
     let childrenWithProps = [];
     for (let child of this.props.children) {
-      if (child.type) {
-        if (child.type.name == 'Trigger') {
+      if (child.props) {
+        if (child.type.name === 'Trigger' || child.props.type === 'trigger') {
           childrenWithProps.push(React.cloneElement(child, {
             setVisibility: this.setVisibility.bind(this),
             getCursorPos: this.getCursorPos.bind(this)
           }));
-        } else if (child.type.name == 'Hover') {
+        } else if (child.type.name === 'Hover' || child.props.type === 'hover') {
           childrenWithProps.push(React.cloneElement(child, {
             styles: hoverComponentStyle
           }));
         }
-      } 
+      }
     }
 
     return (
