@@ -39,10 +39,12 @@
   align-items: stretch;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  background-color: #eae9e9;  
 }
 
 .subleft {
   width: calc(50% - 30px);  
+  overflow-x: auto;
 }
 
 .subright {
