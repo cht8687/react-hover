@@ -30,4 +30,21 @@
   font-weight: normal;
   color: #44B39D;
   text-align: center;
+  border-bottom: 2px dashed rgb(68, 179, 157);
+}
+
+.subcontainer {
+  display: flex;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.subleft {
+  width: calc(50% - 30px);  
+}
+
+.subright {
+  width: calc(50% - 30px);  
 }

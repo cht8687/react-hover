@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
+import styles from './component.css';
 
 export default class HoverComponent extends Component {
   render () {
     return (
-      <div style={{height: '200px', overflowY: 'auto', outline: '1px solid blue', width: '300px', background: '#E8E27E', position: 'absolute'}}>
-        <h1> pop up header </h1> <p> pop up content </p>
+      <div className={styles.hover}>
+          <img className={styles.thumbnail} alt="Albert Einstein" src="https://images.gr-assets.com/authors/1429114964p2/9810.jpg" />
+          <blockquote className={styles.quote}> Two things are infinite: the universe and human stupidity; and I'm not sure about the universe. </blockquote>
+          <p className={styles.people}>--Albert Einstein</p>
       </div>
     )
   }

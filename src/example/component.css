@@ -1,0 +1,28 @@
+.hover {
+    background-color: papayawhip;   
+    width: 300px;
+    height: 150px; 
+    border-style: dashed;
+    border-color: chocolate;
+}
+
+.trigger {
+    font-size: 0.8em;
+    background-color: #44B39D;
+    color: white;
+    width: 200px;
+}
+
+.quote {
+    padding: 15px 25px;
+}
+
+.thumbnail {
+    float: left;
+    margin-top: 40px;
+}
+
+.people {
+    float: right;
+    margin-top: -23px;
+}
