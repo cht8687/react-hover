@@ -1,0 +1,33 @@
+.container {
+}
+
+.title {
+  color: #fff;
+  text-align: center;
+  background-color: #44B39D;
+  position: relative;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  padding: 5rem;
+  margin-bottom: 2rem;
+  font-size: 3.25rem;  
+}
+
+.main {
+  padding: 0 7rem;
+  font-size: 1.1rem;
+}
+
+.description {
+  margin: 0 0 0 0;
+  font-size: 1.25rem;  
+}
+
+.subtitle {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: normal;
+  color: #44B39D;
+  text-align: center;
+}
