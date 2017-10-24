@@ -17,7 +17,9 @@ class App extends Component {
     return (
       <div className={styles.container}>
         <div className={styles.title}> React-hover
-          <div className={styles.description}>--Your handy hover tool</div>
+          <div className={styles.description}>
+             <a className="" href="https://github.com/cht8687/react-hover">Github</a>
+          </div>
         </div>
         <div className={styles.main}>
           <h2 className={styles.subtitle}> Use custom components as trigger and hover </h2>
