@@ -48,7 +48,7 @@
 </big></p>
 
 
-![React hover](src/example/react-hover.gif)
+![React hover](src/example/react-hover-new.gif)
 
 
 ## Installation
