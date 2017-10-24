@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import styles from './component.css';
+import styles from './component.css'
 
 export default class TriggerComponent extends Component {
   render () {
