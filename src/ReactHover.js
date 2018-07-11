@@ -16,7 +16,8 @@ class ReactHover extends Component {
       children: PropTypes.object,
       hoverComponentStyle: {
         display: 'none',
-        position: 'absolute'
+        position: 'absolute',
+        zIndex: '1'
       }
     }
   }
