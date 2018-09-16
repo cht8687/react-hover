@@ -2,7 +2,7 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
 var env = process.env.NODE_ENV || 'development';
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   devtool: 'source-map',
@@ -20,32 +20,44 @@ module.exports = {
         }
       }),
       new webpack.HotModuleReplacementPlugin(),
-      new ExtractTextPlugin('style.css', { allChunks: true })
+      new MiniCssExtractPlugin({
+        // Options similar to the same options in webpackOptions.output
+        // both options are optional
+        filename: "[name].css",
+        chunkFilename: "[id].css"
+      })
     ],
     module: {
-      loaders: [
+      rules: [
         {
-          test: /\.js$/, 
+          test: /\.js$/,
           loaders: ['babel-loader'],
           include: [path.resolve('src')]
         },
         {
           test: /\.css$/,
-          loader: ExtractTextPlugin.extract('css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'),
-          include: [path.resolve('src')]
-        }
-      ],
-      preLoaders: [
+          use: [
+            {
+              loader: MiniCssExtractPlugin.loader,
+              options: {
+                // you can specify a publicPath here
+                // by default it use publicPath in webpackOptions.output
+                publicPath: '../'
+              }
+            },
+            "css-loader"
+          ]
+        },
         {
-          test: /\.js$/, 
-          loaders: ['eslint-loader'], 
+          enforce: 'pre',
+          test: /\.js$/,
+          loaders: ['eslint-loader'],
           include: [path.resolve('src')]
         }
-      ]   
+      ]
     },
-    resolve: { extensions: ['', '.js'] },
+    resolve: { extensions: ['.js'] },
     stats: { colors: true },
-    eslint: { configFile: 'src/.eslintrc' },
     devServer: {
       hot: true,
       historyApiFallback: true,
