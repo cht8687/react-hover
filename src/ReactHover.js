@@ -10,7 +10,7 @@ class ReactHover extends Component {
     className: PropTypes.string
   }
 
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       children: PropTypes.object,
@@ -21,7 +21,7 @@ class ReactHover extends Component {
     }
   }
 
-  renderItem(item, index) {
+  renderItem (item, index) {
     if (item.type.name === 'Trigger' || item.props.type === 'trigger') {
       return (
         <Trigger key={index}>
@@ -37,20 +37,20 @@ class ReactHover extends Component {
     }
   }
 
-  render() {
+  render () {
     const { hoverComponentStyle } = this.state
-    let childrenWithProps = [];
+    let childrenWithProps = []
     for (let child of this.props.children) {
       if (child.props) {
         if (child.type.name === 'Trigger' || child.props.type === 'trigger') {
           childrenWithProps.push(React.cloneElement(child, {
             setVisibility: this.setVisibility.bind(this),
             getCursorPos: this.getCursorPos.bind(this)
-          }));
+          }))
         } else if (child.type.name === 'Hover' || child.props.type === 'hover') {
           childrenWithProps.push(React.cloneElement(child, {
             styles: hoverComponentStyle
-          }));
+          }))
         }
       }
     }
@@ -62,7 +62,7 @@ class ReactHover extends Component {
     )
   }
 
-  setVisibility(flag) {
+  setVisibility (flag) {
     let { hoverComponentStyle } = this.state
     let updatedStyles = null
     if (flag) {
@@ -75,7 +75,7 @@ class ReactHover extends Component {
     })
   }
 
-  getCursorPos(e) {
+  getCursorPos (e) {
     const cursorX = e.pageX
     const cursorY = e.pageY
     let { options: { followCursor, shiftX, shiftY } } = this.props
@@ -97,7 +97,7 @@ class ReactHover extends Component {
   }
 }
 
-ReactHover.Trigger = Trigger;
-ReactHover.Hover = Hover;
+ReactHover.Trigger = Trigger
+ReactHover.Hover = Hover
 
-export default ReactHover;
+export default ReactHover
