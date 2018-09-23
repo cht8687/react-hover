@@ -15,16 +15,16 @@ const optionsCursorTrueWithMargin = {
 class App extends Component {
   render () {
     return (
-      <div className={"container"}>
-        <div className={"title"}> React-hover
-          <div className={"description"}>
+      <div className={'container'}>
+        <div className={'title'}> React-hover
+          <div className={'description'}>
             <a href='https://github.com/cht8687/react-hover'>Github</a>
           </div>
         </div>
-        <div className={"main"}>
-          <h2 className={"subtitle"}> Use custom components as trigger and hover </h2>
-          <div className={"subcontainer"}>
-            <div className={"subleft"}>
+        <div className={'main'}>
+          <h2 className={'subtitle'}> Use custom components as trigger and hover </h2>
+          <div className={'subcontainer'}>
+            <div className={'subleft'}>
               <pre>{`
                 <ReactHover
                   options={optionsCursorTrueWithMargin}>
@@ -37,7 +37,7 @@ class App extends Component {
                   </ReactHover>`}
               </pre>
             </div>
-            <div className={"subright"}>
+            <div className={'subright'}>
               <ReactHover
                 options={optionsCursorTrueWithMargin}>
                 <ReactHover.Trigger type='trigger'>
@@ -49,9 +49,9 @@ class App extends Component {
               </ReactHover>
             </div>
           </div>
-          <h2 className={"subtitle"}> Use HTML as trigger and hover </h2>
-          <div className={"subcontainer"}>
-            <div className={"subleft"}>
+          <h2 className={'subtitle'}> Use HTML as trigger and hover </h2>
+          <div className={'subcontainer'}>
+            <div className={'subleft'}>
               <pre>{`
               <ReactHover
               options={optionsCursorTrueWithMargin}>
@@ -68,7 +68,7 @@ class App extends Component {
             </ReactHover>`}
               </pre>
             </div>
-            <div className={"subright"}>
+            <div className={'subright'}>
               <ReactHover
                 options={optionsCursorTrueWithMargin}>
                 <ReactHover.Trigger type='trigger'>
