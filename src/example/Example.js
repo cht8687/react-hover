@@ -3,7 +3,7 @@ import { render } from 'react-dom'
 import ReactHover from '..'
 import HoverComponent from './HoverComponent'
 import TriggerComponent from './TriggerComponent'
-import styles from './styles.css'
+import './styles.css'
 import componentstyles from './component.css'
 
 const optionsCursorTrueWithMargin = {
@@ -15,16 +15,16 @@ const optionsCursorTrueWithMargin = {
 class App extends Component {
   render () {
     return (
-      <div className={styles.container}>
-        <div className={styles.title}> React-hover
-          <div className={styles.description}>
+      <div className={"container"}>
+        <div className={"title"}> React-hover
+          <div className={"description"}>
             <a href='https://github.com/cht8687/react-hover'>Github</a>
           </div>
         </div>
-        <div className={styles.main}>
-          <h2 className={styles.subtitle}> Use custom components as trigger and hover </h2>
-          <div className={styles.subcontainer}>
-            <div className={styles.subleft}>
+        <div className={"main"}>
+          <h2 className={"subtitle"}> Use custom components as trigger and hover </h2>
+          <div className={"subcontainer"}>
+            <div className={"subleft"}>
               <pre>{`
                 <ReactHover
                   options={optionsCursorTrueWithMargin}>
@@ -37,7 +37,7 @@ class App extends Component {
                   </ReactHover>`}
               </pre>
             </div>
-            <div className={styles.subright}>
+            <div className={"subright"}>
               <ReactHover
                 options={optionsCursorTrueWithMargin}>
                 <ReactHover.Trigger type='trigger'>
@@ -49,9 +49,9 @@ class App extends Component {
               </ReactHover>
             </div>
           </div>
-          <h2 className={styles.subtitle}> Use HTML as trigger and hover </h2>
-          <div className={styles.subcontainer}>
-            <div className={styles.subleft}>
+          <h2 className={"subtitle"}> Use HTML as trigger and hover </h2>
+          <div className={"subcontainer"}>
+            <div className={"subleft"}>
               <pre>{`
               <ReactHover
               options={optionsCursorTrueWithMargin}>
@@ -68,7 +68,7 @@ class App extends Component {
             </ReactHover>`}
               </pre>
             </div>
-            <div className={styles.subright}>
+            <div className={"subright"}>
               <ReactHover
                 options={optionsCursorTrueWithMargin}>
                 <ReactHover.Trigger type='trigger'>
