@@ -4,7 +4,7 @@ import ReactHover from '..'
 import HoverComponent from './HoverComponent'
 import TriggerComponent from './TriggerComponent'
 import './styles.css'
-import componentstyles from './component.css'
+import './component.css'
 
 const optionsCursorTrueWithMargin = {
   followCursor: true,
@@ -13,7 +13,7 @@ const optionsCursorTrueWithMargin = {
 }
 
 class App extends Component {
-  render () {
+  render() {
     return (
       <div className={'container'}>
         <div className={'title'}> React-hover
@@ -75,10 +75,10 @@ class App extends Component {
                   <h1 style={{ background: '#44B39D', width: '200px', fontSize: '1.5em', color: 'white' }}> <p>Hover on me</p></h1>
                 </ReactHover.Trigger>
                 <ReactHover.Hover type='hover'>
-                  <div className={componentstyles.hover}>
-                    <img className={componentstyles.thumbnail} alt='Albert Einstein' src='https://images.gr-assets.com/authors/1429114964p2/9810.jpg' />
-                    <blockquote className={componentstyles.quote}> Two things are infinite: the universe and human stupidity; and I'm not sure about the universe. </blockquote>
-                    <p className={componentstyles.people}>--Albert Einstein</p>
+                  <div className={'hover'}>
+                    <img className={'thumbnail'} alt='Albert Einstein' src='https://images.gr-assets.com/authors/1429114964p2/9810.jpg' />
+                    <blockquote className={'quote'}> Two things are infinite: the universe and human stupidity; and I'm not sure about the universe. </blockquote>
+                    <p className={'people'}>--Albert Einstein</p>
                   </div>
                 </ReactHover.Hover>
               </ReactHover>
