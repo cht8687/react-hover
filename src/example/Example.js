@@ -38,15 +38,17 @@ class App extends Component {
               </pre>
             </div>
             <div className={'subright'}>
-              <ReactHover
-                options={optionsCursorTrueWithMargin}>
-                <ReactHover.Trigger type='trigger'>
-                  <TriggerComponent />
-                </ReactHover.Trigger>
-                <ReactHover.Hover type='hover'>
-                  <HoverComponent />
-                </ReactHover.Hover>
-              </ReactHover>
+              {[1, 2, 3].map(() => {
+                return <ReactHover
+                  options={optionsCursorTrueWithMargin}>
+                  <ReactHover.Trigger type='trigger'>
+                    <TriggerComponent />
+                  </ReactHover.Trigger>
+                  <ReactHover.Hover type='hover'>
+                    <HoverComponent />
+                  </ReactHover.Hover>
+                </ReactHover>
+              })}
             </div>
           </div>
           <h2 className={'subtitle'}> Use HTML as trigger and hover </h2>
