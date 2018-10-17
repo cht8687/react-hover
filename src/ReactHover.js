@@ -56,7 +56,7 @@ class ReactHover extends Component {
     }
 
     return (
-      <div>
+      <div style={{position: 'relative'}}>
         {childrenWithProps.map((item, index) => this.renderItem(item, index))}
       </div>
     )
@@ -76,8 +76,13 @@ class ReactHover extends Component {
   }
 
   getCursorPos (e) {
-    const cursorX = e.pageX
-    const cursorY = e.pageY
+    // const cursorX = e.pageX
+    // const cursorY = e.pageY
+    // fix 出现滚动条时的问题
+    const cursorX = e.clientX
+    const cursorY = e.clientY
+    // 触发reflow，暂不优化
+    const domPos = e.target.getBoundingClientRect()
     let { options: { followCursor, shiftX, shiftY } } = this.props
     let { hoverComponentStyle } = this.state
     let updatedStyles = null
@@ -90,7 +95,7 @@ class ReactHover extends Component {
     if (isNaN(shiftY)) {
       shiftY = 0
     }
-    updatedStyles = { ...hoverComponentStyle, top: cursorY + shiftY, left: cursorX + shiftX }
+    updatedStyles = { ...hoverComponentStyle, top: cursorY + shiftY - domPos.y, left: cursorX + shiftX - domPos.x }
     this.setState({
       hoverComponentStyle: updatedStyles
     })
