@@ -13,7 +13,7 @@ const optionsCursorTrueWithMargin = {
 }
 
 class App extends Component {
-  render() {
+  render () {
     return (
       <div className={'container'}>
         <div className={'title'}> React-hover
