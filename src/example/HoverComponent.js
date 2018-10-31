@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './component.css'
 
 export default class HoverComponent extends Component {
-  render() {
+  render () {
     return (
       <div className={'hover'}>
         <img className={'thumbnail'} alt='Albert Einstein' src='https://images.gr-assets.com/authors/1429114964p2/9810.jpg' />

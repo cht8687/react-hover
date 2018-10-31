@@ -3,7 +3,10 @@ import test from 'tape'
 import ReactHover from '../src/ReactHover'
 import HoverComponent from '../src/example/HoverComponent'
 import TriggerComponent from '../src/example/TriggerComponent'
-import { shallow } from 'enzyme'
+import Enzyme, { shallow } from 'enzyme'
+import Adapter from 'enzyme-adapter-react-16'
+
+Enzyme.configure({ adapter: new Adapter() })
 
 test('----- React Component Tests: ReactHover -----', t => {
   t.plan(3)
