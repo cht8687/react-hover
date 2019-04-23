@@ -49,7 +49,9 @@ class ReactHover extends Component {
           }))
         } else if (child.type.name === 'Hover' || child.props.type === 'hover') {
           childrenWithProps.push(React.cloneElement(child, {
-            styles: hoverComponentStyle
+            styles: hoverComponentStyle,
+            setVisibility: this.setVisibility.bind(this),
+            getCursorPos: this.getCursorPos.bind(this)
           }))
         }
       }
