@@ -157,6 +157,7 @@ MIT
 Thanks to these wonderful developers for helping this project:
 
 <p float="left">
+    <a href="https://github.com/illiteratewriter"><img src="https://avatars1.githubusercontent.com/u/5787110?s=400&v=4" width="50" height="50" /></a>
     <a href="https://github.com/simPod"><img src="https://avatars3.githubusercontent.com/u/327717?s=400&v=4" width="50" height="50" /></a>
     <a href="https://github.com/bucketsec"><img src="https://avatars1.githubusercontent.com/u/35276194?s=400&v=4" width="50" height="50" /></a>
 </p>
