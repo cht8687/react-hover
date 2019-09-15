@@ -28,7 +28,7 @@ class ReactHover extends Component {
           {item}
         </Trigger>
       )
-    } else if (item.type.name === 'hover' || item.props.type === 'hover') {
+    } else if (item.type.name === 'Hover' || item.props.type === 'hover') {
       return (
         <Hover key={index}>
           {item}

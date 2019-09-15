@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ReactDom from 'react-dom'
 import PropTypes from 'prop-types'
 
 export default class Trigger extends Component {
@@ -17,12 +18,13 @@ export default class Trigger extends Component {
   }
 
   componentDidMount () {
-    let childStyles = this.refs.triggerContainer.children[0].style
+    // let childStyles = this.refs.triggerContainer.children[0].style
+    let childStyles = window.getComputedStyle(ReactDom.findDOMNode(this.refs.triggerContainer.children[0]))
     this.setState({
       styles: {
-        width: childStyles.width,
-        height: childStyles.height,
-        margin: childStyles.margin
+        width: childStyles.getPropertyValue('width'),
+        height: childStyles.getPropertyValue('height'),
+        margin: childStyles.getPropertyValue('margin')
       }
     })
   }
