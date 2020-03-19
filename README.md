@@ -148,6 +148,9 @@ Then
 open http://localhost:8080/webpack-dev-server/
 ```
 
+## Want to buy me a coffee?
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/X8X71IORB)
+
 ## License
 
 MIT
