@@ -7,29 +7,31 @@ export default class Trigger extends Component {
     type: PropTypes.string,
     children: PropTypes.object,
     setVisibility: PropTypes.func,
-    getCursorPos: PropTypes.func
+    getCursorPos: PropTypes.func,
   }
 
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
-      styles: {}
+      styles: {},
     }
   }
 
-  componentDidMount () {
+  componentDidMount() {
     // let childStyles = this.refs.triggerContainer.children[0].style
-    let childStyles = window.getComputedStyle(ReactDom.findDOMNode(this.refs.triggerContainer.children[0]))
+    let childStyles = window.getComputedStyle(
+      ReactDom.findDOMNode(this.refs.triggerContainer.children[0]),
+    )
     this.setState({
       styles: {
         width: childStyles.getPropertyValue('width'),
         height: childStyles.getPropertyValue('height'),
-        margin: childStyles.getPropertyValue('margin')
-      }
+        margin: childStyles.getPropertyValue('margin'),
+      },
     })
   }
 
-  render () {
+  render() {
     const { styles } = this.state
     return (
       <div
@@ -38,7 +40,7 @@ export default class Trigger extends Component {
         onMouseMove={this.onMouseMove.bind(this)}
         onTouchStart={this.onTouchStart.bind(this)}
         onTouchEnd={this.onTouchEnd.bind(this)}
-        ref='triggerContainer'
+        ref="triggerContainer"
         style={styles}
       >
         {this.props.children.props.children}
@@ -46,27 +48,27 @@ export default class Trigger extends Component {
     )
   }
 
-  onMouseOver () {
+  onMouseOver() {
     const { setVisibility } = this.props.children.props
     setVisibility(true)
   }
 
-  onMouseOut () {
+  onMouseOut() {
     const { setVisibility } = this.props.children.props
     setVisibility(false)
   }
 
-  onMouseMove (e) {
+  onMouseMove(e) {
     const { getCursorPos } = this.props.children.props
     getCursorPos(e)
   }
 
-  onTouchStart () {
+  onTouchStart() {
     const { setVisibility } = this.props.children.props
     setVisibility(true)
   }
 
-  onTouchEnd () {
+  onTouchEnd() {
     const { setVisibility } = this.props.children.props
     setVisibility(false)
   }
