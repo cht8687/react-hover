@@ -36,20 +36,13 @@
     <img src="https://img.shields.io/npm/l/react-hover.svg?style=flat-square"
          alt="License">
   </a>
-
-  <a href="http://standardjs.com/">
-    <img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg"
-         alt="License">
-  </a>
 </p>
 
 <p align="center"><big>
 
 </big></p>
 
-
 ![React hover](src/example/react-hover-new.gif)
-
 
 ## Installation
 
@@ -67,35 +60,33 @@ $ npm install --save react-hover
 
 [Code Example](https://github.com/cht8687/react-hover/blob/master/src/example/Example.js)
 
-
 ## Usage
 
 You can turn plain HTML or your custom trigger/hover components in React-hover.
 
 Below is the example of custom components:
+
 ```js
-<ReactHover
-  options={optionsCursorTrueWithMargin}>
-  <ReactHover.Trigger type='trigger'>
+<ReactHover options={optionsCursorTrueWithMargin}>
+  <Trigger type="trigger">
     <TriggerComponent />
-  </ReactHover.Trigger>
-  <ReactHover.Hover type='hover'>
+  </Trigger>
+  <Hover type="hover">
     <HoverComponent />
-  </ReactHover.Hover>
+  </Hover>
 </ReactHover>
 ```
 
 Or plain HTML element:
 
 ```js
-<ReactHover
-  options={optionsCursorTrueWithMargin}>
-  <ReactHover.Trigger type='trigger'>
-    <h1 style={{background: '#abbcf1', width: '200px'}}> Hover on me </h1>
-  </ReactHover.Trigger>
-  <ReactHover.Hover type='hover'>
+<ReactHover options={optionsCursorTrueWithMargin}>
+  <Trigger type="trigger">
+    <h1 style={{ background: '#abbcf1', width: '200px' }}> Hover on me </h1>
+  </Trigger>
+  <Hover type="hover">
     <h1> I am hover HTML </h1>
-  </ReactHover.Hover>
+  </Hover>
 </ReactHover>
 ```
 
@@ -106,18 +97,16 @@ Or plain HTML element:
 Set the options.
 
 ```js
-
 const options = {
-  followCursor:true,
+  followCursor: true,
   shiftX: 20,
-  shiftY: 0
+  shiftY: 0,
 }
-
 ```
+
 `followCursor`: define if hover object follow mouse cursor
 `shiftX`: left-right shift the hover object to the mouse cursor
 `shiftY`: up-down shift the hover object to the mouse cursor
-
 
 ## type
 
@@ -127,10 +116,11 @@ Set the type.
 
 ```js
 
-<ReactHover.Trigger type='trigger'>
-<ReactHover.Hover type='hover'>
+<Trigger type='trigger'>
+<Hover type='hover'>
 
 ```
+
 This prop defines the type name. It must be declared as above if you minify your code in production.
 
 ## Development
@@ -149,6 +139,7 @@ open http://localhost:8080/webpack-dev-server/
 ```
 
 ## Want to buy me a coffee?
+
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/X8X71IORB)
 
 ## License

@@ -1,6 +1,6 @@
 import React from 'react'
 import test from 'tape'
-import ReactHover from '../src/ReactHover'
+import ReactHover, { Trigger, Hover } from '../src/ReactHover'
 import HoverComponent from '../src/example/HoverComponent'
 import TriggerComponent from '../src/example/TriggerComponent'
 import Enzyme, { shallow } from 'enzyme'
@@ -14,15 +14,18 @@ test('----- React Component Tests: ReactHover -----', t => {
   const optionsCursorTrueWithMargin = {
     followCursor: true,
     shiftX: 20,
-    shiftY: 0
+    shiftY: 0,
   }
-  const wrapperShallow = shallow( <ReactHover  options={optionsCursorTrueWithMargin}>
-              <ReactHover.Trigger type='trigger'>
-                <TriggerComponent />
-              </ReactHover.Trigger>
-              <ReactHover.Hover type='hover'>
-                <HoverComponent />
-              </ReactHover.Hover> </ReactHover>)
+  const wrapperShallow = shallow(
+    <ReactHover options={optionsCursorTrueWithMargin}>
+      <Trigger type="trigger">
+        <TriggerComponent />
+      </Trigger>
+      <Hover type="hover">
+        <HoverComponent />
+      </Hover>{' '}
+    </ReactHover>,
+  )
   t.equal(1, wrapperShallow.find('TriggerComponent').length)
   t.equal(1, wrapperShallow.find('HoverComponent').length)
   t.end()

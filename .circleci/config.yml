@@ -14,5 +14,4 @@ jobs:
       - node/with-cache:
           steps:
             - run: yarn install --frozen-lockfile
-      - run: npm run lint
       - run: npm run test
