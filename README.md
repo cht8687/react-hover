@@ -52,13 +52,14 @@
 $ npm install --save react-hover
 ```
 
+## Codesandbox Demo 
+
+[Codesandbox example](https://codesandbox.io/s/charming-snyder-3hund?fontsize=14&hidenavigation=1&theme=dark)
+
 ## Demo
 
 [Demo](http://cht8687.github.io/react-hover/example/)
 
-## Example code
-
-[Code Example](https://github.com/cht8687/react-hover/blob/master/src/example/Example.js)
 
 ## Usage
 
