@@ -10,6 +10,14 @@ class ReactHover extends Component {
     className: PropTypes.string,
   }
 
+  static defaultProps = {
+    options: {
+      followCursor: true,
+      shiftX: 20,
+      shiftY: 0
+    },
+  }
+
   constructor(props) {
     super(props)
     this.state = {
@@ -103,6 +111,8 @@ class ReactHover extends Component {
     })
   }
 }
+
+
 
 export { Trigger, Hover }
 export default ReactHover
