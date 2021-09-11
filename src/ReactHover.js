@@ -1,96 +1,44 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import Hover from './lib/Hover'
 import Trigger from './lib/Trigger'
 import PropTypes from 'prop-types'
 
-class ReactHover extends Component {
-  static propTypes = {
-    children: PropTypes.array.isRequired,
-    options: PropTypes.object.isRequired,
-    className: PropTypes.string,
+const propTypes = {
+  children: PropTypes.array.isRequired,
+  options: PropTypes.object.isRequired,
+  className: PropTypes.string,
+}
+
+function renderItem(item, index) {
+  if (item.type.name === 'Trigger' || item.props.type === 'trigger') {
+    return <Trigger key={index}>{item}</Trigger>
+  } else if (item.type.name === 'Hover' || item.props.type === 'hover') {
+    return <Hover key={index}>{item}</Hover>
   }
+}
 
-  static defaultProps = {
-    options: {
-      followCursor: true,
-      shiftX: 20,
-      shiftY: 0
-    },
-  }
+function ReactHover(props) {
+  let [hoverComponentStyle, updateHoverComponentStyle] = useState({
+    display: 'none',
+    position: 'absolute',
+  })
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      children: PropTypes.object,
-      hoverComponentStyle: {
-        display: 'none',
-        position: 'absolute',
-      },
-    }
-  }
-
-  renderItem(item, index) {
-    if (item.type.name === 'Trigger' || item.props.type === 'trigger') {
-      return <Trigger key={index}>{item}</Trigger>
-    } else if (item.type.name === 'Hover' || item.props.type === 'hover') {
-      return <Hover key={index}>{item}</Hover>
-    }
-  }
-
-  render() {
-    const { hoverComponentStyle } = this.state
-    let childrenWithProps = []
-    for (let child of this.props.children) {
-      if (child.props) {
-        if (child.type.name === 'Trigger' || child.props.type === 'trigger') {
-          childrenWithProps.push(
-            React.cloneElement(child, {
-              setVisibility: this.setVisibility.bind(this),
-              getCursorPos: this.getCursorPos.bind(this),
-            }),
-          )
-        } else if (
-          child.type.name === 'Hover' ||
-          child.props.type === 'hover'
-        ) {
-          childrenWithProps.push(
-            React.cloneElement(child, {
-              styles: hoverComponentStyle,
-              setVisibility: this.setVisibility.bind(this),
-              getCursorPos: this.getCursorPos.bind(this),
-            }),
-          )
-        }
-      }
-    }
-
-    return (
-      <div>
-        {childrenWithProps.map((item, index) => this.renderItem(item, index))}
-      </div>
-    )
-  }
-
-  setVisibility(flag) {
-    let { hoverComponentStyle } = this.state
+  const setVisibility = flag => {
     let updatedStyles = null
     if (flag) {
       updatedStyles = { ...hoverComponentStyle, display: 'block' }
     } else {
       updatedStyles = { ...hoverComponentStyle, display: 'none' }
     }
-    this.setState({
-      hoverComponentStyle: updatedStyles,
-    })
+    updateHoverComponentStyle(updatedStyles)
   }
 
-  getCursorPos(e) {
+  const getCursorPos = e => {
     const cursorX = e.pageX
     const cursorY = e.pageY
     let {
       options: { followCursor, shiftX, shiftY },
-    } = this.props
-    let { hoverComponentStyle } = this.state
+    } = props
     let updatedStyles = null
     if (!followCursor) {
       return
@@ -106,13 +54,37 @@ class ReactHover extends Component {
       top: cursorY + shiftY,
       left: cursorX + shiftX,
     }
-    this.setState({
-      hoverComponentStyle: updatedStyles,
-    })
+    updateHoverComponentStyle(updatedStyles)
   }
+
+  let childrenWithProps = []
+  for (let child of props.children) {
+    if (child.props) {
+      if (child.type.name === 'Trigger' || child.props.type === 'trigger') {
+        childrenWithProps.push(
+          React.cloneElement(child, {
+            setVisibility: setVisibility,
+            getCursorPos: getCursorPos,
+          }),
+        )
+      } else if (child.type.name === 'Hover' || child.props.type === 'hover') {
+        childrenWithProps.push(
+          React.cloneElement(child, {
+            styles: hoverComponentStyle,
+            setVisibility: setVisibility,
+            getCursorPos: getCursorPos,
+          }),
+        )
+      }
+    }
+  }
+
+  return (
+    <div>{childrenWithProps.map((item, index) => renderItem(item, index))}</div>
+  )
 }
 
-
+ReactHover.propTypes = propTypes
 
 export { Trigger, Hover }
 export default ReactHover
