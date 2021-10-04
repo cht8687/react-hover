@@ -1,6 +1,6 @@
 {
   "name": "react-hover",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A handy hover tool for React",
   "main": "dist/index.js",
   "scripts": {
