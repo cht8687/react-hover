@@ -1,5 +1,3 @@
-[![Join the chat at https://gitter.im/cht8687/react-hover](https://badges.gitter.im/cht8687/react-hover.svg)](https://gitter.im/cht8687/react-hover?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 <big><h1 align="center">React Hover --- Turn anything to a 'hoverable' object</h1></big>
 
 <p align="center">
@@ -25,11 +23,6 @@
   <a href="https://npmjs.org/package/react-hover">
     <img src="http://img.shields.io/npm/dm/react-hover.svg?style=flat-square"
          alt="Downloads">
-  </a>
-
-  <a href="https://david-dm.org/cht8687/react-hover.svg">
-    <img src="https://david-dm.org/cht8687/react-hover.svg?style=flat-square"
-         alt="Dependency Status">
   </a>
 
   <a href="https://github.com/cht8687/react-hover/blob/master/LICENSE">
@@ -155,4 +148,5 @@ Thanks to these wonderful developers for helping this project:
     <a href="https://github.com/illiteratewriter"><img src="https://avatars1.githubusercontent.com/u/5787110?s=400&v=4" width="50" height="50" /></a>
     <a href="https://github.com/simPod"><img src="https://avatars3.githubusercontent.com/u/327717?s=400&v=4" width="50" height="50" /></a>
     <a href="https://github.com/bucketsec"><img src="https://avatars1.githubusercontent.com/u/35276194?s=400&v=4" width="50" height="50" /></a>
+    <a href="https://github.com/Isaius"><img src="https://avatars.githubusercontent.com/u/37005228?v=4" width="50" height="50" /></a>
 </p>
