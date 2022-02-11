@@ -25,13 +25,38 @@ function Trigger(props){
     })
   }, [])
 
-  return(
+  const onMouseOver = () => {
+    setVisibility(true)
+    props.onMouseOver && props.onMouseOver()
+  }
+
+  const onMouseOut = () => {
+    setVisibility(false)
+    props.onMouseOut && props.onMouseOut()
+  }
+
+  const onMouseMove = e => {
+    getCursorPos(e)
+    props.onMouseMove && props.onMouseMove(e)
+  }
+
+  const onTouchStart = () => {
+    setVisibility(true)
+    props.onTouchStart && props.onTouchStart()
+  }
+
+  const onTouchEnd = () => {
+    setVisibility(false)
+    props.onTouchStart && props.onTouchStart()
+  }
+
+  return (
     <div
-      onMouseOver={() => setVisibility(true)}
-      onMouseOut={() => setVisibility(false)}
-      onMouseMove={(e) => getCursorPos(e)}
-      onTouchStart={() => setVisibility(true)}
-      onTouchEnd={() => setVisibility(false)}
+      onMouseOver={onMouseOver}
+      onMouseOut={onMouseOut}
+      onMouseMove={onMouseMove}
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
       ref={triggerContainerRef}
       style={styles}
     >
