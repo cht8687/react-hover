@@ -9,9 +9,9 @@ const propTypes = {
   getCursorPos: PropTypes.func,
 }
 
-function Trigger(props){
-  const [styles, setStyles] = useState({});
-  const { setVisibility, getCursorPos } = props.children.props;
+function Trigger (props) {
+  const [styles, setStyles] = useState({})
+  const { setVisibility, getCursorPos } = props.children.props
   const triggerContainerRef = useRef(null)
 
   useEffect(() => {
@@ -21,7 +21,7 @@ function Trigger(props){
     setStyles({
       width: childStyles.getPropertyValue('width'),
       height: childStyles.getPropertyValue('height'),
-      margin: childStyles.getPropertyValue('margin')
+      margin: childStyles.getPropertyValue('margin'),
     })
   }, [])
 
@@ -47,7 +47,7 @@ function Trigger(props){
 
   const onTouchEnd = () => {
     setVisibility(false)
-    props.onTouchStart && props.onTouchStart()
+    props.onTouchEnd && props.onTouchEnd()
   }
 
   return (
@@ -65,6 +65,6 @@ function Trigger(props){
   )
 }
 
-Trigger.propTypes = propTypes;
+Trigger.propTypes = propTypes
 
-export default Trigger;
+export default Trigger
