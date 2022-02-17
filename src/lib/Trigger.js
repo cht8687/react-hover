@@ -25,14 +25,14 @@ function Trigger (props) {
     })
   }, [])
 
-  const onMouseOver = () => {
+  const onMouseOver = e => {
     setVisibility(true)
-    props.onMouseOver && props.onMouseOver()
+    props.onMouseOver && props.onMouseOver(e)
   }
 
-  const onMouseOut = () => {
+  const onMouseOut = e => {
     setVisibility(false)
-    props.onMouseOut && props.onMouseOut()
+    props.onMouseOut && props.onMouseOut(e)
   }
 
   const onMouseMove = e => {
@@ -40,14 +40,14 @@ function Trigger (props) {
     props.onMouseMove && props.onMouseMove(e)
   }
 
-  const onTouchStart = () => {
+  const onTouchStart = e => {
     setVisibility(true)
-    props.onTouchStart && props.onTouchStart()
+    props.onTouchStart && props.onTouchStart(e)
   }
 
-  const onTouchEnd = () => {
+  const onTouchEnd = e => {
     setVisibility(false)
-    props.onTouchEnd && props.onTouchEnd()
+    props.onTouchEnd && props.onTouchEnd(e)
   }
 
   return (
