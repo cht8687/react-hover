@@ -9,9 +9,9 @@ const propTypes = {
   getCursorPos: PropTypes.func,
 }
 
-function Trigger(props){
-  const [styles, setStyles] = useState({});
-  const { setVisibility, getCursorPos } = props.children.props;
+function Trigger (props) {
+  const [styles, setStyles] = useState({})
+  const { setVisibility, getCursorPos } = props.children.props
   const triggerContainerRef = useRef(null)
 
   useEffect(() => {
@@ -21,17 +21,42 @@ function Trigger(props){
     setStyles({
       width: childStyles.getPropertyValue('width'),
       height: childStyles.getPropertyValue('height'),
-      margin: childStyles.getPropertyValue('margin')
+      margin: childStyles.getPropertyValue('margin'),
     })
   }, [])
 
-  return(
+  const onMouseOver = e => {
+    setVisibility(true)
+    props.onMouseOver && props.onMouseOver(e)
+  }
+
+  const onMouseOut = e => {
+    setVisibility(false)
+    props.onMouseOut && props.onMouseOut(e)
+  }
+
+  const onMouseMove = e => {
+    getCursorPos(e)
+    props.onMouseMove && props.onMouseMove(e)
+  }
+
+  const onTouchStart = e => {
+    setVisibility(true)
+    props.onTouchStart && props.onTouchStart(e)
+  }
+
+  const onTouchEnd = e => {
+    setVisibility(false)
+    props.onTouchEnd && props.onTouchEnd(e)
+  }
+
+  return (
     <div
-      onMouseOver={() => setVisibility(true)}
-      onMouseOut={() => setVisibility(false)}
-      onMouseMove={(e) => getCursorPos(e)}
-      onTouchStart={() => setVisibility(true)}
-      onTouchEnd={() => setVisibility(false)}
+      onMouseOver={onMouseOver}
+      onMouseOut={onMouseOut}
+      onMouseMove={onMouseMove}
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
       ref={triggerContainerRef}
       style={styles}
     >
@@ -40,6 +65,6 @@ function Trigger(props){
   )
 }
 
-Trigger.propTypes = propTypes;
+Trigger.propTypes = propTypes
 
-export default Trigger;
+export default Trigger
